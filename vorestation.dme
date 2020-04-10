@@ -3520,6 +3520,7 @@
 #include "maps\southern_cross\loadout\loadout_uniform.dm"
 #include "maps\southern_cross\structures\closets\misc.dm"
 #include "maps\southern_cross\structures\closets\misc_vr.dm"
+#include "maps\stargazer\stargazer.dm"
 #include "maps\submaps\_helpers.dm"
 #include "maps\submaps\_readme.dm"
 #include "maps\submaps\engine_submaps\engine.dm"
@@ -3533,6 +3534,5 @@
 #include "maps\submaps\surface_submaps\plains\plains_areas.dm"
 #include "maps\submaps\surface_submaps\wilderness\wilderness.dm"
 #include "maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
-#include "maps\tether\tether.dm"
 #include "maps\~map_system\maps.dm"
 // END_INCLUDE
