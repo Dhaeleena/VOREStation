@@ -1,5 +1,9 @@
 //These define the Z-level values of various levels
 //Map Load Order seems to determine Z-level assignment order
+//Any new multi-z levels will likely be above the ship? Add a buffer level of admin walls or space to prevent connections from ship to anything else.
+//Most important note: A landmark of type /landmark/mapdata must be present on the top of the stack of Z-levels, and edit the height variable
+//	to be the top z of this stack. I named it ZLevelLandmark and it is currently in the lower left of the top level of the ship. Please leave it
+//	in the lower left of the maps if you move it!
 #define Z_LEVEL_STARGAZER_FLOOR_1			1
 #define Z_LEVEL_STARGAZER_FLOOR_2			2
 #define Z_LEVEL_STARGAZER_FLOOR_3			3
@@ -32,22 +36,23 @@
 	emergency_shuttle_called_message = "An emergency evacuation has begun, and an off-schedule tram has been called. It will arrive at the tram station in approximately %ETA%."
 	emergency_shuttle_recall_message = "The evacuation tram has been recalled."
 
-/datum/map_z_level/stargazer/first
+/datum/map_z_level/stargazer/first //This defines the bottom deck z-level of the Stargazer
 	z = Z_LEVEL_STARGAZER_FLOOR_1
-	name = "First Floor"
+	name = "Bottom Deck"
 	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
 	transit_chance = 33
+	base_turf = /turf/space
 
-/datum/map_z_level/stargazer/second
+/datum/map_z_level/stargazer/second //This defines the middle deck z-level of the Stargazer
 	z = Z_LEVEL_STARGAZER_FLOOR_2
-	name = "Second Floor"
+	name = "Middle Deck"
 	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
 	transit_chance = 33
 	base_turf = /turf/simulated/open
 
-/datum/map_z_level/stargazer/third
+/datum/map_z_level/stargazer/third //This defines the top deck z-level of the Stargazer
 	z = Z_LEVEL_STARGAZER_FLOOR_3
-	name = "Third Floor"
+	name = "Top Deck"
 	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
 	transit_chance = 33
 	base_turf = /turf/simulated/open

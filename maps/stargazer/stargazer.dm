@@ -1,8 +1,8 @@
 #if !defined(USING_MAP_DATUM)
 
-	#include "stargazer-floor-1.dmm"
-	#include "stargazer-floor-2.dmm"
-	#include "stargazer-floor-3.dmm"
+	#include "stargazer-floor-1.dmm" //Stargazer Bottom Deck
+	#include "stargazer-floor-2.dmm" //Stargazer Middle Deck
+	#include "stargazer-floor-3.dmm" //Stargazer Top Deck
 
 	#include "stargazer_areas.dm"
 	#include "stargazer_defines.dm"
