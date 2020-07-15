@@ -12,6 +12,7 @@
 
 /datum/job/qm
 	pto_type = PTO_CARGO
+	dept_time_required = 20
 
 /datum/job/cargo_tech
 	total_positions = 3
@@ -38,12 +39,16 @@
 /datum/job/librarian
 	total_positions = 2
 	spawn_positions = 2
-	alt_titles = list("Journalist" = /datum/alt_title/journalist, "Writer" = /datum/alt_title/writer, "Historian" = /datum/alt_title/historian)
+	alt_titles = list("Journalist" = /datum/alt_title/journalist, "Writer" = /datum/alt_title/writer, "Historian" = /datum/alt_title/historian, "Professor" = /datum/alt_title/professor)
 	pto_type = PTO_CIVILIAN
 
 /datum/alt_title/historian
 	title = "Historian"
 	title_blurb = "The Historian uses the Library as a base of operation to record any important events occuring on station."
+
+/datum/alt_title/professor
+	title = "Professor"
+	title_blurb = "The Professor uses the Library as a base of operations to share their vast knowledge with the crew."
 
 /datum/job/lawyer
 	disallow_jobhop = TRUE

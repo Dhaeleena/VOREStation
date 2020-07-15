@@ -41,6 +41,9 @@
 		secret_programs["Flesh"] = image(icon = 'icons/skybox/skybox_vr.dmi', icon_state = "flesh")
 		secret_programs["Synth Int"] = image(icon = 'icons/skybox/skybox_vr.dmi', icon_state = "synthinsides")
 		secret_programs["Synth Int 2"] = image(icon = 'icons/skybox/skybox_vr.dmi', icon_state = "synthinsides_active")
+		secret_programs["Two Teshari"] = image(icon = 'icons/skybox/skybox_vr.dmi', icon_state = "doubletesh")
+		secret_programs["Teshari 1"] = image(icon = 'icons/skybox/skybox_vr.dmi', icon_state = "sca")
+		secret_programs["Teshari 2"] = image(icon = 'icons/skybox/skybox_vr.dmi', icon_state = "eis")
 
 /obj/machinery/computer/looking_glass/Destroy()
 	my_area = null
@@ -115,7 +118,7 @@
 
 /obj/machinery/computer/looking_glass/emag_act(var/remaining_charges, var/mob/user as mob)
 	if (!emagged)
-		playsound(src.loc, 'sound/effects/sparks4.ogg', 75, 1)
+		playsound(src, 'sound/effects/sparks4.ogg', 75, 1)
 		emagged = 1
 		to_chat(user, "<span class='notice'>You unlock several programs that were hidden somewhere in memory.</span>")
 		log_game("[key_name(usr)] emagged the [name]")
