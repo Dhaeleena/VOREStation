@@ -134,7 +134,7 @@
 	access = access_medical_equip
 
 /datum/supply_pack/voidsuits/medical/alt
-	name = "Vey-Med Medical voidsuits"
+	name = "Vey-Med Autoadaptive voidsuits (humanoid)"
 	contains = list(
 			/obj/item/clothing/suit/space/void/medical/alt = 2,
 			/obj/item/clothing/head/helmet/space/void/medical/alt = 2,
@@ -144,8 +144,19 @@
 			)
 	cost = 60
 	containertype = /obj/structure/closet/crate/secure
-	containername = "Vey-Med Medical voidsuit crate"
+	containername = "Vey-Med Autoadaptive voidsuit (humanoid) crate"
 	access = access_medical_equip
+
+/datum/supply_pack/voidsuits/medical/alt/tesh
+	name = "Vey-Med Autoadaptive voidsuits (teshari)"
+	contains = list(
+			/obj/item/clothing/suit/space/void/medical/alt/tesh = 2,
+			/obj/item/clothing/head/helmet/space/void/medical/alt/tesh = 2,
+			/obj/item/clothing/mask/breath = 2,
+			/obj/item/clothing/shoes/magboots = 2,
+			/obj/item/weapon/tank/oxygen = 2
+			)
+	containername = "Vey-Med Autoadaptive voidsuit (teshari) crate"
 
 /datum/supply_pack/voidsuits/security
 	name = "Security voidsuits"
@@ -169,13 +180,13 @@
 			/obj/item/clothing/shoes/magboots = 2,
 			/obj/item/weapon/tank/oxygen = 2
 			)
-	cost = 40
+	cost = 60
 	containertype = /obj/structure/closet/crate/secure
 	containername = "Security Crowd Control voidsuit crate"
 	access = access_armory
 
 /datum/supply_pack/voidsuits/security/alt
-	name = "Security EVA Riot voidsuits"
+	name = "Security EVA voidsuits"
 	contains = list(
 			/obj/item/clothing/suit/space/void/security/alt = 2,
 			/obj/item/clothing/head/helmet/space/void/security/alt = 2,
@@ -183,9 +194,9 @@
 			/obj/item/clothing/shoes/magboots = 2,
 			/obj/item/weapon/tank/oxygen = 2
 			)
-	cost = 50
+	cost = 60
 	containertype = /obj/structure/closet/crate/secure
-	containername = "Security EVA Riot voidsuit crate"
+	containername = "Security EVA voidsuit crate"
 	access = access_armory
 
 /datum/supply_pack/voidsuits/supply
