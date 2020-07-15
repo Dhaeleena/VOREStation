@@ -453,29 +453,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 //Returns a list of all mobs with their name
 /proc/getmobs()
-
-	var/list/mobs = sortmobs()
-	var/list/names = list()
-	var/list/creatures = list()
-	var/list/namecounts = list()
-	for(var/mob/M in mobs)
-		var/name = M.name
-		if (name in names)
-			namecounts[name]++
-			name = "[name] ([namecounts[name]])"
-		else
-			names.Add(name)
-			namecounts[name] = 1
-		if (M.real_name && M.real_name != M.name)
-			name += " \[[M.real_name]\]"
-		if (M.stat == 2)
-			if(istype(M, /mob/observer/dead/))
-				name += " \[ghost\]"
-			else
-				name += " \[dead\]"
-		creatures[name] = M
-
-	return creatures
+	return observe_list_format(sortmobs())
 
 //Orders mobs by type then by name
 /proc/sortmobs()
@@ -508,6 +486,34 @@ Turf and target are seperate in case you want to teleport some distance from a t
 //	for(var/mob/living/silicon/hive_mainframe/M in sortmob)
 //		mob_list.Add(M)
 	return moblist
+
+/proc/observe_list_format(input_list)
+	if(!islist(input_list))
+		return
+	var/list/names = list()
+	var/list/output_list = list()
+	var/list/namecounts = list()
+	var/name
+	for(var/atom/A in input_list)
+		name = A.name
+		if(name in names)
+			namecounts[name]++
+			name = "[name] ([namecounts[name]])"
+		else
+			names.Add(name)
+			namecounts[name] = 1
+		if(ismob(A))
+			var/mob/M = A
+			if(M.real_name && M.real_name != M.name)
+				name += " \[[M.real_name]\]"
+			if(M.stat == DEAD)
+				if(istype(M, /mob/observer/dead/))
+					name += " \[ghost\]"
+				else
+					name += " \[dead\]"
+		output_list[name] = A
+
+	return output_list
 
 // Format a power value in W, kW, MW, or GW.
 /proc/DisplayPower(powerused)
@@ -676,7 +682,7 @@ proc/GaussRandRound(var/sigma,var/roundto)
 //Returns: all the areas in the world
 /proc/return_areas()
 	var/list/area/areas = list()
-	for(var/area/A in all_areas)
+	for(var/area/A in world)
 		areas += A
 	return areas
 
@@ -694,7 +700,7 @@ proc/GaussRandRound(var/sigma,var/roundto)
 		areatype = areatemp.type
 
 	var/list/areas = new/list()
-	for(var/area/N in all_areas)
+	for(var/area/N in world)
 		if(istype(N, areatype)) areas += N
 	return areas
 
@@ -708,7 +714,7 @@ proc/GaussRandRound(var/sigma,var/roundto)
 		areatype = areatemp.type
 
 	var/list/turfs = new/list()
-	for(var/area/N in all_areas)
+	for(var/area/N in world)
 		if(istype(N, areatype))
 			for(var/turf/T in N) turfs += T
 	return turfs
@@ -723,7 +729,7 @@ proc/GaussRandRound(var/sigma,var/roundto)
 		areatype = areatemp.type
 
 	var/list/atoms = new/list()
-	for(var/area/N in all_areas)
+	for(var/area/N in world)
 		if(istype(N, areatype))
 			for(var/atom/A in N)
 				atoms += A
@@ -1273,14 +1279,8 @@ var/mob/dview/dview_mob = new
 	if(!center)
 		return
 
-	//VOREStation Add - Emergency Backup
-	if(!dview_mob)
-		dview_mob = new()
-		WARNING("dview mob was lost, and had to be recreated!")
-	//VOREStation Add End
-
 	dview_mob.loc = center
-
+	
 	dview_mob.see_invisible = invis_flags
 
 	. = view(range, dview_mob)
@@ -1308,6 +1308,11 @@ var/mob/dview/dview_mob = new
 		dead_mob_list -= src
 	else
 		living_mob_list -= src
+
+/mob/dview/Life()
+	mob_list -= src
+	dead_mob_list -= src
+	living_mob_list -= src
 
 /mob/dview/Destroy(var/force)
 	crash_with("Attempt to delete the dview_mob: [log_info_line(src)]")

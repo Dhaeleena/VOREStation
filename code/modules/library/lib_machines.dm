@@ -447,7 +447,8 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 				B.title = title
 				B.author = author
 				B.dat = content
-				B.icon_state = "book[rand(1,7)]"
+				B.icon_state = "book[rand(1,16)]"
+				B.item_state = B.icon_state
 				src.visible_message("[src]'s printer hums as it produces a completely bound book. How did it do that?")
 				break
 	if(href_list["orderbyid"])
@@ -471,6 +472,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
  */
 /obj/machinery/libraryscanner
 	name = "scanner"
+	desc = "A scanner for scanning in books and papers."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "bigscanner"
 	anchored = 1
