@@ -7,6 +7,8 @@
 #define Z_LEVEL_STARGAZER_FLOOR_1			1
 #define Z_LEVEL_STARGAZER_FLOOR_2			2
 #define Z_LEVEL_STARGAZER_FLOOR_3			3
+#define Z_LEVEL_STARGAZER_FLOOR_4			4
+#define Z_LEVEL_STARGAZER_FLOOR_5			5
 
 /datum/map/stargazer //Need to actually edit most of this to be correct later.
 	name = "Stargazer"
@@ -36,23 +38,37 @@
 	emergency_shuttle_called_message = "An emergency evacuation has begun, and an off-schedule tram has been called. It will arrive at the tram station in approximately %ETA%."
 	emergency_shuttle_recall_message = "The evacuation tram has been recalled."
 
-/datum/map_z_level/stargazer/first //This defines the bottom deck z-level of the Stargazer
+/datum/map_z_level/stargazer/first //This defines the first deck z-level of the Stargazer
 	z = Z_LEVEL_STARGAZER_FLOOR_1
-	name = "Bottom Deck"
+	name = "1st Floor"
 	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
-	transit_chance = 33
+	transit_chance = 20
 	base_turf = /turf/space
 
-/datum/map_z_level/stargazer/second //This defines the middle deck z-level of the Stargazer
+/datum/map_z_level/stargazer/second //This defines the second deck z-level of the Stargazer
 	z = Z_LEVEL_STARGAZER_FLOOR_2
-	name = "Middle Deck"
+	name = "2nd Floor"
 	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
-	transit_chance = 33
+	transit_chance = 20
 	base_turf = /turf/simulated/open
 
-/datum/map_z_level/stargazer/third //This defines the top deck z-level of the Stargazer
+/datum/map_z_level/stargazer/third //This defines the third deck z-level of the Stargazer
 	z = Z_LEVEL_STARGAZER_FLOOR_3
-	name = "Top Deck"
+	name = "3rd Floor"
 	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
-	transit_chance = 33
+	transit_chance = 20
+	base_turf = /turf/simulated/open
+
+/datum/map_z_level/stargazer/fourth //This defines the fourth deck z-level of the Stargazer
+	z = Z_LEVEL_STARGAZER_FLOOR_4
+	name = "4th Floor"
+	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
+	transit_chance = 20
+	base_turf = /turf/simulated/open
+
+/datum/map_z_level/stargazer/fifth //This defines the fifth deck z-level of the Stargazer
+	z = Z_LEVEL_STARGAZER_FLOOR_5
+	name = "5th Floor"
+	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
+	transit_chance = 20
 	base_turf = /turf/simulated/open
