@@ -12,7 +12,8 @@
 					LANGUAGE_CANILUNZT	= 0,
 					LANGUAGE_ECUREUILIAN= 0,
 					LANGUAGE_DAEMON		= 0,
-					LANGUAGE_ENOCHIAN	= 0
+					LANGUAGE_ENOCHIAN	= 0,
+					LANGUAGE_DRUDAKAR	= 0
 					)
 	var/vr_sprites = list()
 	var/pto_type = null
@@ -34,7 +35,8 @@
 					LANGUAGE_CANILUNZT	= 1,
 					LANGUAGE_ECUREUILIAN= 1,
 					LANGUAGE_DAEMON		= 1,
-					LANGUAGE_ENOCHIAN	= 1
+					LANGUAGE_ENOCHIAN	= 1,
+					LANGUAGE_DRUDAKAR	= 1
 					)
 
 /hook/startup/proc/robot_modules_vr()
@@ -147,7 +149,8 @@
 	pto_type = PTO_SCIENCE
 	vr_sprites = list(
 						"Acheron" = "mechoid-Science",
-						"ZOOM-BA" = "zoomba-research"
+						"ZOOM-BA" = "zoomba-research",
+						"XI-GUS" = "spiderscience"
 					 )
 
 /obj/item/weapon/robot_module/robot/security/combat
@@ -163,7 +166,9 @@
 					"K9 hound" = "k9",
 					"K9 Alternative" = "k92",
 					"Secborg model V-2" = "secborg",
-					"Borgi" = "borgi-sec"
+					"Borgi" = "borgi-sec",
+					"Otieborg" = "oties",
+					"Drake" = "drakesec"
 					)
 	channels = list("Security" = 1)
 	networks = list(NETWORK_SECURITY)
@@ -239,7 +244,8 @@
 					"Medical Hound" = "medihound",
 					"Dark Medical Hound (Static)" = "medihounddark",
 					"Mediborg model V-2" = "vale",
-					"Borgi" = "borgi-medi"
+					"Borgi" = "borgi-medi",
+					"Drake" = "drakemed"
 					)
 
 /obj/item/weapon/robot_module/robot/medihound/New(var/mob/living/silicon/robot/R)
@@ -254,7 +260,7 @@
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(2000)
 	synths += medicine
-	
+
 	var/obj/item/stack/medical/advanced/clotting/C = new (src)
 	C.uses_charge = 1
 	C.charge_costs = list(1000)
@@ -347,7 +353,9 @@
 	name = "Custodial Hound module"
 	sprites = list(
 					"Custodial Hound" = "scrubpup",
-					"Borgi" = "borgi-jani"
+					"Borgi" = "borgi-jani",
+					"Otieborg" = "otiej",
+					"Drake" = "drakejanit"
 					)
 	channels = list("Service" = 1)
 	pto_type = PTO_CIVILIAN
@@ -432,7 +440,8 @@
 					"Research Hound" = "science",
 					"Borgi" = "borgi-sci",
 					"SciHound" = "scihound",
-					"SciHoundDark" = "scihounddark"
+					"SciHoundDark" = "scihounddark",
+					"Drake" = "drakesci"
 					)
 	channels = list("Science" = 1)
 	pto_type = PTO_SCIENCE
@@ -507,7 +516,8 @@
 					"Borgi" = "borgi-eng",
 					"V2 Engidog" = "thottbot",
 					"EngiHound" = "engihound",
-					"EngiHoundDark" = "engihounddark"
+					"EngiHoundDark" = "engihounddark",
+					"Drake" = "drakeeng"
 					)
 	channels = list("Engineering" = 1)
 	networks = list(NETWORK_ENGINEERING)
@@ -657,6 +667,7 @@
 					"Pinkhound" = "k69",
 					"ServicehoundV2" = "serve2",
 					"ServicehoundV2 Darkmode" = "servedark",
+					"Drake" = "drakemine"
 					)
 	channels = list("Service" = 1)
 	pto_type = PTO_CIVILIAN
@@ -728,7 +739,8 @@
 	sprites = list(
 					"KMine" = "kmine",
 					"CargoHound" = "cargohound",
-					"CargoHoundDark" = "cargohounddark"
+					"CargoHoundDark" = "cargohounddark",
+					"Drake" = "drakemine"
 					)
 	channels = list("Supply" = 1)
 	pto_type = PTO_CARGO
