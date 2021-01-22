@@ -29,6 +29,8 @@
 	num_alternate_languages = 3
 	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX)
 
+	genders = list(MALE, FEMALE, PLURAL, NEUTER, HERM)
+
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
 
@@ -93,6 +95,8 @@
 
 	//Set up a mob
 	H.species = new_copy
+	H.maxHealth = new_copy.total_health
+	H.hunger_rate = new_copy.hunger_factor
 
 	if(new_copy.holder_type)
 		H.holder_type = new_copy.holder_type
