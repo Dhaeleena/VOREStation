@@ -23,6 +23,11 @@ datum/preferences
 	var/UI_style_alpha = 255
 	var/tooltipstyle = "Midnight"		//Style for popup tooltips
 	var/client_fps = 0
+	var/ambience_freq = 5				// How often we're playing repeating ambience to a client.
+	var/ambience_chance = 35			// What's the % chance we'll play ambience (in conjunction with the above frequency)
+
+	var/tgui_fancy = TRUE
+	var/tgui_lock = FALSE
 
 	//character preferences
 	var/real_name						//our character's name
@@ -45,7 +50,7 @@ datum/preferences
 	var/r_facial = 0					//Face hair color
 	var/g_facial = 0					//Face hair color
 	var/b_facial = 0					//Face hair color
-	var/s_tone = 0						//Skin tone
+	var/s_tone = -75						//Skin tone
 	var/r_skin = 238					//Skin color // Vorestation edit, so color multi sprites can aren't BLACK AS THE VOID by default.
 	var/g_skin = 206					//Skin color // Vorestation edit, so color multi sprites can aren't BLACK AS THE VOID by default.
 	var/b_skin = 179					//Skin color // Vorestation edit, so color multi sprites can aren't BLACK AS THE VOID by default.
@@ -145,6 +150,8 @@ datum/preferences
 	var/examine_text_mode = 0 // Just examine text, include usage (description_info), switch to examine panel.
 	var/multilingual_mode = 0 // Default behaviour, delimiter-key-space, delimiter-key-delimiter, off
 
+	var/list/volume_channels = list()
+
 
 /datum/preferences/New(client/C)
 	player_setup = new(src)
@@ -228,7 +235,7 @@ datum/preferences
 		to_chat(user, "<span class='danger'>No mob exists for the given client!</span>")
 		close_load_dialog(user)
 		return
-	
+
 	if(!char_render_holders)
 		update_preview_icon()
 	show_character_previews()
@@ -273,7 +280,7 @@ datum/preferences
 		client.screen |= BG
 	BG.icon_state = bgstate
 	BG.screen_loc = preview_screen_locs["BG"]
-	
+
 	for(var/D in global.cardinal)
 		var/obj/screen/setup_preview/O = LAZYACCESS(char_render_holders, "[D]")
 		if(!O)
@@ -336,6 +343,8 @@ datum/preferences
 	else if(href_list["resetslot"])
 		if("No" == alert("This will reset the current slot. Continue?", "Reset current slot?", "No", "Yes"))
 			return 0
+		if("No" == alert("Are you completely sure that you want to reset this character slot?", "Reset current slot?", "No", "Yes"))
+			return 0
 		load_character(SAVE_RESET)
 		sanitize_preferences()
 	else if(href_list["copy"])
@@ -391,13 +400,15 @@ datum/preferences
 	if(S)
 		dat += "<b>Select a character slot to load</b><hr>"
 		var/name
+		var/nickname //vorestation edit - This set appends nicknames to the save slot
 		for(var/i=1, i<= config.character_slots, i++)
 			S.cd = "/character[i]"
 			S["real_name"] >> name
+			S["nickname"] >> nickname //vorestation edit
 			if(!name)	name = "Character[i]"
 			if(i==default_slot)
 				name = "<b>[name]</b>"
-			dat += "<a href='?src=\ref[src];changeslot=[i]'>[name]</a><br>"
+			dat += "<a href='?src=\ref[src];changeslot=[i]'>[name][nickname ? " ([nickname])" : ""]</a><br>" //vorestation edit
 
 	dat += "<hr>"
 	dat += "</center></tt>"

@@ -164,6 +164,7 @@ var/list/admin_verbs_server = list(
 	/datum/admins/proc/restart,
 	/datum/admins/proc/delay,
 	/datum/admins/proc/toggleaban,
+	/datum/admins/proc/togglepersistence,
 	/client/proc/cmd_mod_say,
 	/client/proc/toggle_log_hrefs,
 	/datum/admins/proc/immreboot,
@@ -178,7 +179,6 @@ var/list/admin_verbs_server = list(
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/toggle_random_events,
 	/client/proc/check_customitem_activity,
-	/client/proc/nanomapgen_DumpImage,
 	/client/proc/modify_server_news,
 	/client/proc/recipe_dump,
 	/client/proc/panicbunker,
@@ -352,6 +352,7 @@ var/list/admin_verbs_mod = list(
 	/client/proc/allow_character_respawn,   // Allows a ghost to respawn ,
 	/datum/admins/proc/sendFax,
 	/client/proc/getserverlog,			//allows us to fetch server logs (diary) for other days,
+	/datum/admins/proc/view_persistent_data,
 	/datum/admins/proc/view_txt_log,	//shows the server log (diary) for today,
 	/datum/admins/proc/view_atk_log		//shows the server combat-log, doesn't do anything presently,
 )
