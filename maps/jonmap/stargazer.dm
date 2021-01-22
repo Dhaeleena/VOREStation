@@ -3,6 +3,8 @@
 	#include "stargazer-floor-1.dmm"
 	#include "stargazer-floor-2.dmm"
 	#include "stargazer-floor-3.dmm"
+	#include "stargazer-floor-4.dmm"
+	#include "stargazer-floor-5.dmm"
 
 	#include "stargazer_areas.dm"
 	#include "stargazer_defines.dm"
