@@ -580,8 +580,7 @@
 		blocked += typesof(/mob/living/simple_mob/mechanical/ward)				//Wards that should be created with ward items, are mobs mostly on technicalities
 		blocked += typesof(/mob/living/simple_mob/construct)					//Should only exist
 		blocked += typesof(/mob/living/simple_mob/vore/demon)					//as player-controlled
-		blocked += typesof(/mob/living/simple_mob/shadekin)						//and/or event things
-		blocked += typesof(/mob/living/simple_mob/horror)
+		blocked += typesof(/mob/living/simple_mob/horror)						//and/or event things
 		var/list/voremobs = typesof(mob_path) - blocked // list of possible hostile mobs
 
 		playsound(holder.my_atom, 'sound/effects/phasein.ogg', 100, 1)

@@ -1,3 +1,5 @@
+#define AB_PHASE_SHIFTED	0x1 //Move this flag that was originally from Shadekin into this file as I believe it is only ever used here or by Shadekin, which were removed.
+
 /mob/living/simple_mob/mobs_monsters/clowns/big/c_shift
 	var/ability_flags = 0 //Flags for active abilities
 

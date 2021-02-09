@@ -258,11 +258,6 @@
 		hud_elements |= healths
 
 	//VOREStation Addition begin
-	shadekin_display = new /obj/screen/shadekin()
-	shadekin_display.screen_loc = ui_shadekin_display
-	shadekin_display.icon_state = "shadekin"
-	hud_elements |= shadekin_display
-
 	xenochimera_danger_display = new /obj/screen/xenochimera/danger_level()
 	xenochimera_danger_display.screen_loc = ui_xenochimera_danger_display
 	xenochimera_danger_display.icon_state = "danger00"

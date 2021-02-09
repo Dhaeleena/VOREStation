@@ -31,17 +31,6 @@
 	var/extra_overlay2
 	var/desc = "You should not see this..."
 
-// Species-unique ears
-
-/datum/sprite_accessory/ears/shadekin
-	name = "Shadekin Ears, colorable"
-	desc = ""
-	icon_state = "shadekin"
-	do_colouration = 1
-	color_blend_mode = ICON_MULTIPLY
-	apply_restrictions = TRUE
-	species_allowed = list(SPECIES_SHADEKIN, SPECIES_SHADEKIN_CREW)
-
 // Ears avaliable to anyone
 
 /datum/sprite_accessory/ears/hyena
