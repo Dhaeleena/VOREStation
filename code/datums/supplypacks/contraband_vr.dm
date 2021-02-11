@@ -6,21 +6,7 @@
 	containername = "Stolen crate"
 	contraband = 1
 
-/datum/supply_pack/supply/wolfgirl
-	name = "Wolfgirl Crate"
-	cost = 200 //I mean, it's a whole wolfgirl
-	containertype = /obj/structure/largecrate/animal/wolfgirl
-	containername = "Wolfgirl crate"
-	contraband = 1
-
-/datum/supply_pack/supply/catgirl
-	name = "Catgirl Crate"
-	cost = 200 //I mean, it's a whole catgirl
-	containertype = /obj/structure/largecrate/animal/catgirl
-	containername = "Catgirl crate"
-	contraband = 1
-
-/datum/supply_pack/randomised/hospitality/pizzavouchers //WE ALWAYS DELIVER WE ALWAYS DELIVER WE ALWAYS DELIVER WE ALWAYS DELIVER WE ALWAYS DELIVER
+/datum/supply_pack/randomised/hospitality/pizzavouchers
 	num_contained = 3
 	contains = list(
 			/obj/item/pizzavoucher,

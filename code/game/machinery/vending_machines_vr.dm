@@ -1,3 +1,5 @@
+//TODO: Do we want to split this into sub-files for different types of machines? This file is so damn long...
+
 //Tweaked existing vendors
 /obj/machinery/vending/hydroseeds/New()
 	products += list(/obj/item/seeds/shrinkshroom = 3,/obj/item/seeds/megashroom = 3)
@@ -1051,7 +1053,7 @@
 					/obj/item/device/laser_pointer = 200,
 					/obj/item/clothing/glasses/omnihud = 100)
 	premium = list(/obj/item/device/perfect_tele/one_beacon = 1)
-	contraband = list(/obj/item/weapon/disk/nifsoft/compliance = 1)
+	contraband = list()
 
 /obj/machinery/vending/loadout/loadout_misc
 	name = "Bits and Bobs"
@@ -2412,7 +2414,7 @@
 					/obj/item/device/laser_pointer = 200,
 					/obj/item/clothing/glasses/omnihud = 100)
 	premium = list(/obj/item/device/perfect_tele/one_beacon = 1)
-	contraband = list(/obj/item/weapon/disk/nifsoft/compliance = 1)
+	contraband = list()
 
 /obj/machinery/vending/loadout/loadout_misc
 	name = "Bits and Bobs"
@@ -3378,7 +3380,6 @@
 					/obj/item/device/laser_pointer = 3,
 					/obj/item/clothing/glasses/omnihud = 10,
 					/obj/item/device/perfect_tele/one_beacon = 1,
-					/obj/item/weapon/disk/nifsoft/compliance = 1,
 					/obj/item/device/perfect_tele/alien = 10)
 
 /obj/machinery/vending/event/loadout_misc //FOR FACILITATING AND EQUIPPING EVENTS, DO NOT PLACE ON THE NORMAL MAP//
@@ -4076,7 +4077,6 @@
 					/obj/item/weapon/reagent_containers/food/snacks/meat/chicken = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/corgi = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/crab = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/meat/fox = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/grubmeat = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/human = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/monkey = 10,
@@ -4509,7 +4509,6 @@
 					/obj/item/weapon/reagent_containers/food/snacks/meat/chicken = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/corgi = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/crab = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/meat/fox = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/grubmeat = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/human = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/monkey = 10,

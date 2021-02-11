@@ -121,6 +121,7 @@
 
 //For OmniHUD records access for appropriate models
 /proc/hasHUD_vr(mob/living/carbon/human/H, hudtype)
+	/*
 	if(H.nif)
 		switch(hudtype)
 			if("security")
@@ -129,6 +130,7 @@
 			if("medical")
 				if(H.nif.flag_check(NIF_V_AR_MEDICAL,NIF_FLAGS_VISION))
 					return TRUE
+	*/
 
 	if(istype(H.glasses, /obj/item/clothing/glasses/omnihud))
 		var/obj/item/clothing/glasses/omnihud/omni = H.glasses
@@ -153,44 +155,3 @@
 	if(istype(H) && (H.get_effective_size() - src.get_effective_size()) >= 0.75)
 		message = "<font color='red'>They are small enough that you could easily trample them!</font>"
 	return message
-
-/mob/living/carbon/human/proc/examine_nif(mob/living/carbon/human/H)
-	if(nif && nif.examine_msg) //If you have one set, anyway.
-		return "<span class='notice'>[nif.examine_msg]</span>"
-
-/mob/living/carbon/human/proc/examine_chimera(mob/living/carbon/human/H)
-	var/t_He 	= "It" //capitalised for use at the start of each line.
-	var/t_his 	= "its"
-	var/t_His 	= "Its"
-	var/t_appear 	= "appears"
-	var/t_has 	= "has"
-	switch(identifying_gender) //Gender is their "real" gender. Identifying_gender is their "chosen" gender.
-		if(MALE)
-			t_He 	= "He"
-			t_His 	= "His"
-			t_his 	= "his"
-		if(FEMALE)
-			t_He 	= "She"
-			t_His 	= "Her"
-			t_his 	= "her"
-		if(PLURAL)
-			t_He	= "They"
-			t_His 	= "Their"
-			t_his 	= "their"
-			t_appear 	= "appear"
-			t_has 	= "have"
-		if(NEUTER)
-			t_He 	= "It"
-			t_His 	= "Its"
-			t_his 	= "its"
-		if(HERM)
-			t_He 	= "Shi"
-			t_His 	= "Hir"
-			t_his 	= "hir"
-	if(revive_ready == REVIVING_NOW || revive_ready == REVIVING_DONE)
-		if(stat == DEAD)
-			return "<span class='warning'>[t_His] body is twitching subtly.</span>"
-		else
-			return "<span class='notice'>[t_He] [t_appear] to be in some sort of torpor.</span>"
-	if(feral)
-		return "<span class='warning'>[t_He] [t_has] a crazed, wild look in [t_his] eyes!</span>"

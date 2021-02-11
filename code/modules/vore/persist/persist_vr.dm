@@ -82,10 +82,6 @@
 		WARNING("Persist (PID): Skipping [occupant] for persisting, as they have no prefs.")
 		return
 
-	//This one doesn't rely on persistence prefs
-	if(ishuman(occupant) && occupant.stat != DEAD)
-		persist_nif_data(occupant, prefs)
-
 	if(!prefs.persistence_settings)
 		return // Persistence disabled by preference settings
 
@@ -217,43 +213,3 @@
 		// Weight Loss!
 		var/loss = (MAX_NUTRITION_TO_LOSE - C.nutrition) * weight_per_nutrition * C.weight_loss/100
 		C.weight = max(MIN_MOB_WEIGHT, C.weight - loss)
-
-/**
-* Persist any NIF data that needs to be persisted. It's stored in a list to make it more malleable
-* towards future shenanigans such as upgradable NIFs or different types or things of that nature,
-* without invoking the need for a bunch of different save file variables.
-*/
-/proc/persist_nif_data(var/mob/living/carbon/human/H,var/datum/preferences/prefs)
-	if(!istype(H))
-		crash_with("Persist (NIF): Given a nonhuman: [H]")
-		return
-
-	if(!prefs)
-		prefs = prep_for_persist(H)
-
-	if(!prefs)
-		WARNING("Persist (NIF): [H] has no prefs datum, skipping")
-		return
-
-	var/obj/item/device/nif/nif = H.nif
-
-	//If they have one, and if it's not installing without an owner, because
-	//Someone who joins and immediately leaves again (wrong job choice, maybe)
-	//should keep it even though it was probably doing the quick-calibrate, and their
-	//owner will have been pre-set during the constructor.
-	if(nif && !(nif.stat == NIF_INSTALLING && !nif.owner))
-		prefs.nif_path = nif.type
-		prefs.nif_durability = nif.durability
-		prefs.nif_savedata = nif.save_data.Copy()
-	else
-		prefs.nif_path = null
-		prefs.nif_durability = null
-		prefs.nif_savedata = null
-
-	var/datum/category_group/player_setup_category/vore_cat = prefs.player_setup.categories_by_name["VORE"]
-	var/datum/category_item/player_setup_item/vore/nif/nif_prefs = vore_cat.items_by_name["NIF Data"]
-
-	var/savefile/S = new /savefile(prefs.path)
-	if(!S) WARNING ("Persist (NIF): Couldn't load NIF save savefile? [prefs.real_name]")
-	S.cd = "/character[prefs.default_slot]"
-	nif_prefs.save_character(S)

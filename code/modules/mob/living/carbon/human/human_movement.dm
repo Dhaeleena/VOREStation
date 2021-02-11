@@ -29,9 +29,6 @@
 	if (hungry >= 70) . += hungry/50
 
 	//VOREstation start
-	if (feral >= 10) //crazy feral animals give less and less of a shit about pain and hunger as they get crazier
-		. = max(species.slowdown, species.slowdown+((.-species.slowdown)/(feral/10))) // As feral scales to damage, this amounts to an effective +1 slowdown cap
-		if(shock_stage >= 10) . -= 1.5 //this gets a +3 later, feral critters take reduced penalty
 	if(reagents.has_reagent("numbenzyme"))
 		. += 1.5 //A tad bit of slowdown.
 	if(riding_datum) //Bit of slowdown for taur rides if rider is bigger or fatter than mount.

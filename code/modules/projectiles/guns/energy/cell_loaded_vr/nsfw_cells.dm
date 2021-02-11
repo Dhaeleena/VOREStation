@@ -82,34 +82,3 @@
 			H.unEquip(H.gloves)
 		//Hats can stay! Most other things fall off with removing these.
 	..()
-
-/obj/item/ammo_casing/microbattery/combat/final
-	name = "\'NSFW\' microbattery - FINAL OPTION"
-	type_color = "#fcfc0f"
-	type_name = "<span style='color:#000000;font-weight:bold;'>FINAL OPTION</span>" //Doesn't look good in yellow in chat
-	projectile_type = /obj/item/projectile/beam/final_option
-
-/obj/item/projectile/beam/final_option
-	name = "final option beam"
-	icon_state = "omnilaser"
-	nodamage = 1
-	agony = 5
-	damage_type = HALLOSS
-	light_color = "#00CC33"
-
-	muzzle_type = /obj/effect/projectile/muzzle/laser_omni
-	tracer_type = /obj/effect/projectile/tracer/laser_omni
-	impact_type = /obj/effect/projectile/impact/laser_omni
-
-/obj/item/projectile/beam/final_option/on_hit(var/atom/impacted)
-	if(isliving(impacted))
-		var/mob/living/L = impacted
-		if(L.mind)
-			var/nif
-			if(ishuman(L))
-				var/mob/living/carbon/human/H = L
-				nif = H.nif
-			SStranscore.m_backup(L.mind,nif,one_time = TRUE)
-		L.gib()
-
-	..()

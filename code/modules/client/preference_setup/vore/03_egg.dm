@@ -7,7 +7,6 @@ var/HUMAN_EGG 		= "Human"
 var/NEVREAN_EGG		= "nevrean"
 var/SLIME_EGG 		= "Slime"
 var/EGG_EGG 			= "Egg"
-var/XENOCHIMERA_EGG 	= "Xenochimera"
 var/XENOMORPH_EGG 	= "Xenomorph"
 
 // Define a place to save appearance in character setup

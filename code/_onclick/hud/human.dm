@@ -257,13 +257,6 @@
 		healths.screen_loc = ui_health
 		hud_elements |= healths
 
-	//VOREStation Addition begin
-	xenochimera_danger_display = new /obj/screen/xenochimera/danger_level()
-	xenochimera_danger_display.screen_loc = ui_xenochimera_danger_display
-	xenochimera_danger_display.icon_state = "danger00"
-	hud_elements |= xenochimera_danger_display
-	//VOREStation Addition end
-
 	ling_chem_display = new /obj/screen/ling/chems()
 	ling_chem_display.screen_loc = ui_ling_chemical_display
 	ling_chem_display.icon_state = "ling_chems"

@@ -38,13 +38,11 @@
 
 /obj/structure/largecrate/animal/pred
 	name = "Predator carrier"
-	starts_with = list(/mob/living/simple_mob/vore/catgirl)
+	starts_with = list(/mob/living/simple_mob/animal/wolf)
 
 /obj/structure/largecrate/animal/pred/Initialize() //This is nessesary to get a random one each time.
 	starts_with = list(pick(/mob/living/simple_mob/vore/bee,
-						/mob/living/simple_mob/vore/catgirl;3,
 						/mob/living/simple_mob/vore/aggressive/frog,
-						/mob/living/simple_mob/vore/horse,
 						/mob/living/simple_mob/vore/aggressive/panther,
 						/mob/living/simple_mob/vore/aggressive/giant_snake,
 						/mob/living/simple_mob/animal/wolf,
@@ -114,16 +112,6 @@
 		taped = 0
 	..()
 */ //VORESTATION AI REMOVAL, Oties are still fucking broken.
-
-/obj/structure/largecrate/animal/catgirl
-	name = "Catgirl Crate"
-	desc = "A sketchy looking crate with airholes that seems to have had most marks and stickers removed. You can almost make out 'genetically-engineered subject' written on it."
-	starts_with = list(/mob/living/simple_mob/vore/catgirl)
-
-/obj/structure/largecrate/animal/wolfgirl
-	name = "Wolfgirl Crate"
-	desc = "A sketchy looking crate with airholes that shakes and thuds every now and then. Someone seems to be demanding they be let out."
-	starts_with = list(/mob/living/simple_mob/vore/wolfgirl)
 
 /obj/structure/largecrate/animal/fennec
 	name = "Fennec Crate"

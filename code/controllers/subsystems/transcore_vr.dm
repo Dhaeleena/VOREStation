@@ -60,8 +60,7 @@ SUBSYSTEM_DEF(transcore)
 		BITSET(H.hud_updateflag, BACKUP_HUD)
 
 		if(H == imp.imp_in && H.mind && H.stat < DEAD)
-			SStranscore.m_backup(H.mind,H.nif)
-			persist_nif_data(H)
+			SStranscore.m_backup(H.mind)
 
 		if(MC_TICK_CHECK)
 			return
@@ -124,7 +123,7 @@ SUBSYSTEM_DEF(transcore)
 		for(var/N in SStranscore.backed_up[N])
 			if(N) backed_up[N] = SStranscore.backed_up[N]
 
-/datum/controller/subsystem/transcore/proc/m_backup(var/datum/mind/mind, var/obj/item/device/nif/nif, var/one_time = FALSE)
+/datum/controller/subsystem/transcore/proc/m_backup(var/datum/mind/mind, var/one_time = FALSE)
 	ASSERT(mind)
 	if(!mind.name || core_dumped)
 		return 0
@@ -135,23 +134,6 @@ SUBSYSTEM_DEF(transcore)
 		MR = backed_up[mind.name]
 		MR.last_update = world.time
 		MR.one_time = one_time
-
-		//Pass a 0 to not change NIF status (because the elseif is checking for null)
-		if(nif)
-			MR.nif_path = nif.type
-			MR.nif_durability = nif.durability
-			var/list/nifsofts = list()
-			for(var/N in nif.nifsofts)
-				if(N)
-					var/datum/nifsoft/nifsoft = N
-					nifsofts += nifsoft.type
-			MR.nif_software = nifsofts
-			MR.nif_savedata = nif.save_data.Copy()
-		else if(isnull(nif)) //Didn't pass anything, so no NIF
-			MR.nif_path = null
-			MR.nif_durability = null
-			MR.nif_software = null
-			MR.nif_savedata = null
 
 	else
 		MR = new(mind, mind.current, add_to_db = TRUE, one_time = one_time)
