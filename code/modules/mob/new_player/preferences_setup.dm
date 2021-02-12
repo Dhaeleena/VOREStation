@@ -285,8 +285,8 @@
 		var/datum/sprite_accessory/S = hair_styles_list[hairstyle]
 		if(!(species in S.species_allowed) && (!custom_base || !(custom_base in S.species_allowed))) //VOREStation Edit - Custom species base species allowance
 			continue
-		if((!S.ckeys_allowed) || (usr.ckey in S.ckeys_allowed)) //VOREStation Edit, allows ckey locked hairstyles.
-			valid_hairstyles[S.name] = hairstyle //VOREStation Edit, allows ckey locked hairstyles.
+		//if((!S.ckeys_allowed) || (usr.ckey in S.ckeys_allowed)) //VOREStation Edit, allows ckey locked hairstyles. //Removing the Ckey checks for hairs! -Jon
+		valid_hairstyles[S.name] = hairstyle //VOREStation Edit, allows ckey locked hairstyles. //This was indented in below the if statement above
 
 		//valid_hairstyles[hairstyle] = hair_styles_list[hairstyle] //VOREStation Edit. Replaced by above.
 

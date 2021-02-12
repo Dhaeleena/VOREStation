@@ -251,7 +251,7 @@
 		var/list/pretty_ear_styles = list("Normal" = null)
 		for(var/path in ear_styles_list)
 			var/datum/sprite_accessory/ears/instance = ear_styles_list[path]
-			if(((!instance.ckeys_allowed) || (usr.ckey in instance.ckeys_allowed)) && ((!instance.apply_restrictions) || (pref.species in instance.species_allowed)))
+			if(((!instance.apply_restrictions) || (pref.species in instance.species_allowed))) //Removing "((!instance.ckeys_allowed) || (usr.ckey in instance.ckeys_allowed)) && " from the start of this if statement. -Jon
 				pretty_ear_styles[instance.name] = path
 
 		// Present choice to user
@@ -293,7 +293,7 @@
 		var/list/pretty_tail_styles = list("Normal" = null)
 		for(var/path in tail_styles_list)
 			var/datum/sprite_accessory/tail/instance = tail_styles_list[path]
-			if(((!instance.ckeys_allowed) || (usr.ckey in instance.ckeys_allowed)) && ((!instance.apply_restrictions) || (pref.species in instance.species_allowed)))
+			if(((!instance.apply_restrictions) || (pref.species in instance.species_allowed))) //Removing "((!instance.ckeys_allowed) || (usr.ckey in instance.ckeys_allowed)) && " from the beginning of the if statement here. -Jon
 				pretty_tail_styles[instance.name] = path
 
 		// Present choice to user
@@ -335,7 +335,7 @@
 		var/list/pretty_wing_styles = list("Normal" = null)
 		for(var/path in wing_styles_list)
 			var/datum/sprite_accessory/wing/instance = wing_styles_list[path]
-			if(((!instance.ckeys_allowed) || (usr.ckey in instance.ckeys_allowed)) && ((!instance.apply_restrictions) || (pref.species in instance.species_allowed)))
+			if(((!instance.apply_restrictions) || (pref.species in instance.species_allowed))) //Removed "((!instance.ckeys_allowed) || (usr.ckey in instance.ckeys_allowed)) && " from the beginning 
 				pretty_wing_styles[instance.name] = path
 
 		// Present choice to user

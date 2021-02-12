@@ -554,8 +554,8 @@
 	if(X.apply_restrictions && !(target.species.name in X.species_allowed))
 		return FALSE
 
-	if(LAZYLEN(X.ckeys_allowed) && !(user?.ckey in X.ckeys_allowed) && !(target.ckey in X.ckeys_allowed))
-		return FALSE
+	//if(LAZYLEN(X.ckeys_allowed) && !(user?.ckey in X.ckeys_allowed) && !(target.ckey in X.ckeys_allowed))
+	//	return FALSE
 
 	return TRUE
 // VOREStation Add End

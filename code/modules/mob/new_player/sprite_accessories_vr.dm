@@ -26,14 +26,12 @@
 		name = "Citheronia Hair (Kira72)"
 		icon = 'icons/mob/human_face_vr.dmi'
 		icon_state = "citheronia_hair"
-		ckeys_allowed = list("Kira72")
 		do_colouration = 0
 
 	taramaw
 		name = "Hairmaw (Liquidfirefly)"
 		icon = 'icons/mob/human_face_vr.dmi'
 		icon_state = "maw_hair"
-		ckeys_allowed = list("liquidfirefly")
 		do_colouration = 0
 
 	citheronia_colorable
@@ -940,7 +938,6 @@
 		name = "Alurane Body"
 		icon_state = "alurane"
 		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
-		ckeys_allowed = list("natje")
 
 	body_tone
 		name = "Body toning (for emergency contrast loss)"

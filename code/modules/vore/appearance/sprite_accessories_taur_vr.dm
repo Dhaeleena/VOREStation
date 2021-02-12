@@ -512,7 +512,6 @@
 	name = "Alraune (dual color)"
 	icon_state = "alraunecolor_s"
 	ani_state = "alraunecolor_closed_s"
-	ckeys_allowed = null
 	do_colouration = 1
 	extra_overlay = "alraunecolor_markings"
 	extra_overlay_w = "alraunecolor_closed_markings"
@@ -594,33 +593,28 @@
 
 // Special snowflake tails/taurhalves
 
-//spoopylizz: Roiz Lizden
 /datum/sprite_accessory/tail/taur/roiz_long_lizard // Not ACTUALLY a taur, but it uses 32x64 so it wouldn't fit in tails.dmi, and having it as a tail bugs up the sprite.
-	name = "Long Lizard Tail (Roiz Lizden)"
+	name = "Long Lizard Tail"
 	icon_state = "roiz_tail_s"
 	do_colouration = 0
-	ckeys_allowed = list("spoopylizz")
 	hide_body_parts = null
 	clip_mask_icon = null
 	clip_mask_state = null
 
 //wickedtemp: Chakat Tempest
 /datum/sprite_accessory/tail/taur/feline/tempest
-	name = "Feline (wickedtemp) (Taur)"
+	name = "Feline (Taur)"
 	icon_state = "tempest_s"
-	ckeys_allowed = list("wickedtemp")
 
 //silencedmp5a5: Serdykov Antoz
 /datum/sprite_accessory/tail/taur/wolf/serdy
-	name = "CyberSerdy (silencedmp5a5) (Taur)"
+	name = "CyberSerdy (Taur)"
 	icon_state = "serdy_s"
-	ckeys_allowed = list("silencedmp5a5")
 
 //liquidfirefly: Ariana Scol
 /datum/sprite_accessory/tail/taur/centipede
-	name = "Centipede (liquidfirefly) (Taur)"
+	name = "Centipede (Taur)"
 	icon_state = "ariana_s"
-	ckeys_allowed = list("liquidfirefly")
 	do_colouration = 0
 
 	msg_owner_disarm_run = "You quickly push %prey to the ground with your leg!"
@@ -640,10 +634,9 @@
 
 //natje:
 /datum/sprite_accessory/tail/taur/alraune
-	name = "Alraune (natje) (Taur)"
+	name = "Alraune (Taur)"
 	icon_state = "alraune_s"
 	ani_state = "alraune_closed_s"
-	ckeys_allowed = list("natje")
 	do_colouration = 0
 	can_ride = 0
 	clip_mask_state = "taur_clip_mask_alraune"

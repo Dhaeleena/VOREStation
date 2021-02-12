@@ -11,7 +11,7 @@
 // Add Additional variable onto sprite_accessory
 /datum/sprite_accessory
 	// Ckey of person allowed to use this, if defined.
-	var/list/ckeys_allowed = null
+	//var/list/ckeys_allowed = null
 	var/apply_restrictions = FALSE		//whether to apply restrictions for specific tails/ears/wings
 
 /*
@@ -468,96 +468,81 @@
 // Special snowflake ears go below here.
 
 /datum/sprite_accessory/ears/molenar_kitsune
-	name = "quintail kitsune ears (Molenar)"
+	name = "quintail kitsune ears"
 	desc = ""
 	icon_state = "molenar-kitsune"
-	ckeys_allowed = list("molenar")
 
 /datum/sprite_accessory/ears/lilimoth_antennae
-	name = "citheronia antennae (Kira72)"
+	name = "citheronia antennae"
 	desc = ""
 	icon_state = "lilimoth_antennae"
-	ckeys_allowed = list("kira72")
 
 /datum/sprite_accessory/ears/molenar_deathclaw
-	name = "deathclaw ears (Molenar)"
+	name = "deathclaw ears"
 	desc = ""
 	icon_state = "molenar-deathclaw"
-	ckeys_allowed = list("molenar")
 
 /datum/sprite_accessory/ears/miria_fluffdragon
-	name = "fluffdragon ears (Miria Masters)"
+	name = "fluffdragon ears"
 	desc = ""
 	icon_state = "miria-fluffdragonears"
-	ckeys_allowed = list("miriamasters")
 
 /datum/sprite_accessory/ears/miria_kitsune
-	name = "kitsune ears (Miria Masters)"
+	name = "kitsune ears"
 	desc = ""
 	icon_state = "miria-kitsuneears"
-	ckeys_allowed = list("miriamasters")
 
 /datum/sprite_accessory/ears/runac
-	name = "fennecsune ears (Runac)"
+	name = "fennecsune ears"
 	desc = ""
 	icon_state = "runac"
-	ckeys_allowed = list("rebcom1807")
 
 /datum/sprite_accessory/ears/kerena
-	name = "wingwolf ears (Kerena)"
+	name = "wingwolf ears"
 	desc = ""
 	icon_state = "kerena"
-	ckeys_allowed = list("somekindofpony")
 
 /datum/sprite_accessory/ears/rosey
-	name = "tritail kitsune ears (Rosey)"
+	name = "tritail kitsune ears"
 	desc = ""
 	icon_state = "rosey"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-	ckeys_allowed = list("joey4298")
 
 /datum/sprite_accessory/ears/aronai
-	name = "aronai ears/head (Aronai)"
+	name = "aronai ears/head"
 	desc = ""
 	icon_state = "aronai"
-	ckeys_allowed = list("arokha")
 
 /datum/sprite_accessory/ears/holly
-	name = "tigress ears (Holly Sharp)"
+	name = "tigress ears"
 	desc = ""
 	icon_state = "tigressears"
-	ckeys_allowed = list("hoodoo")
 
 /datum/sprite_accessory/ears/molenar_inkling
-	name = "teal mature inkling hair (Kari Akiren)"
+	name = "teal mature inkling hair"
 	desc = ""
 	icon_state = "molenar-tentacle"
-	ckeys_allowed = list("molenar")
 
 /datum/sprite_accessory/ears/shock
-	name = "pharoah hound ears (Shock Diamond)"
+	name = "pharoah hound ears"
 	desc = ""
 	icon_state = "shock"
-	ckeys_allowed = list("icowom","cameron653")
 
 /datum/sprite_accessory/ears/alurane
-	name = "alurane ears/hair (Pumila)"
+	name = "alurane ears/hair"
 	desc = ""
 	icon_state = "alurane-ears"
-	ckeys_allowed = list("natje")
 
 /datum/sprite_accessory/ears/frost
     name = "Frost antenna"
     desc = ""
     icon_state = "frosted_tips"
-    ckeys_allowed = list("tucker0666")
 
 /datum/sprite_accessory/ears/sylv_pip
-    name = "sylveon ears and ribbons (Pip Shyner)"
+    name = "sylveon ears and ribbons"
     desc = ""
     icon_state = "pipears"
-    ckeys_allowed = list("phoaly")
 
 /datum/sprite_accessory/ears/elf_caprine_colorable
 	name = "Caprine horns with pointy ears, colorable"
@@ -663,10 +648,9 @@
 	var/extra_overlay2_w
 
 /datum/sprite_accessory/wing/shock //Unable to split the tail from the wings in the sprite, so let's just classify it as wings.
-	name = "pharoah hound tail (Shock Diamond)"
+	name = "pharoah hound tail"
 	desc = ""
 	icon_state = "shock"
-	ckeys_allowed = list("icowom")
 
 /datum/sprite_accessory/wing/featheredlarge //Made by Natje!
 	name = "large feathered wings (colorable)"
@@ -704,7 +688,6 @@
 	name = "citheronia wings"
 	desc = ""
 	icon_state = "citheronia_wings"
-	ckeys_allowed = list("kira72")
 
 /datum/sprite_accessory/wing/feathered
 	name = "feathered wings, colorable"
@@ -797,28 +780,24 @@
 	icon_state = "beewings"
 
 /datum/sprite_accessory/wing/sepulchre
-	name = "demon wings (Sepulchre)"
+	name = "demon wings"
 	desc = ""
 	icon_state = "sepulchre_wings"
-	ckeys_allowed = list("sepulchre")
 
 /datum/sprite_accessory/wing/miria_fluffdragon
-	name = "fluffdragon wings (Miria Masters)"
+	name = "fluffdragon wings"
 	desc = ""
 	icon_state = "miria-fluffdragontail"
-	ckeys_allowed = list("miriamasters")
 
 /datum/sprite_accessory/wing/scree
-	name = "green taj wings (Scree)"
+	name = "green taj wings"
 	desc = ""
 	icon_state = "scree-wings"
-	ckeys_allowed = list("scree")
 
 /datum/sprite_accessory/wing/liquidfirefly_gazer //I g-guess this could be considered wings?
 	name = "gazer eyestalks"
 	desc = ""
 	icon_state = "liquidfirefly-eyestalks"
-	//ckeys_allowed = list("liquidfirefly","seiga") //At request.
 
 /datum/sprite_accessory/wing/moth_full
 	name = "moth antenna and wings"
@@ -833,10 +812,9 @@
 	color_blend_mode = ICON_MULTIPLY
 
 /datum/sprite_accessory/wing/kerena
-	name = "wingwolf wings (Kerena)"
+	name = "wingwolf wings"
 	desc = ""
 	icon_state = "kerena-wings"
-	ckeys_allowed = list("somekindofpony")
 
 /datum/sprite_accessory/wing/snag
 	name = "xenomorph backplate"
@@ -1134,85 +1112,72 @@
 	extra_overlay = "eboop_mark"
 
 /datum/sprite_accessory/tail/molenar_kitsune
-	name = "quintail kitsune tails (Molenar)"
+	name = "quintail kitsune tails"
 	desc = ""
 	icon_state = "molenar-kitsune"
-	ckeys_allowed = list("molenar")
 
 /datum/sprite_accessory/tail/miria_fluffdragon
-	name = "fluffdragon tail (Miria Masters)"
+	name = "fluffdragon tail"
 	desc = ""
 	icon_state = "miria-fluffdragontail"
-	ckeys_allowed = list("miriamasters")
 
 /datum/sprite_accessory/tail/miria_kitsune
-	name = "Black kitsune tails (Miria Masters)"
+	name = "Black kitsune tails"
 	desc = ""
 	icon_state = "miria-kitsunetail"
-	ckeys_allowed = list("miriamasters")
 
 /datum/sprite_accessory/tail/molenar_deathclaw
-	name = "deathclaw bits (Molenar)"
+	name = "deathclaw bits"
 	desc = ""
 	icon_state = "molenar-deathclaw"
-	ckeys_allowed = list("molenar","silvertalismen","jertheace")
 
 /datum/sprite_accessory/tail/runac
-	name = "fennecsune tails (Runac)"
+	name = "fennecsune tails"
 	desc = ""
 	icon_state = "runac"
-	ckeys_allowed = list("rebcom1807")
 
 /datum/sprite_accessory/tail/reika //Leaving this since it was too hard to split the wings from the tail.
-	name = "fox tail (+ beewings) (Reika)"
+	name = "fox tail (+ beewings)"
 	desc = ""
 	icon_state = "reika"
-	ckeys_allowed = list("rikaru19xjenkins")
 
 /datum/sprite_accessory/tail/rosey
-	name = "tritail kitsune tails (Rosey)"
+	name = "tritail kitsune tails"
 	desc = ""
 	icon_state = "rosey_three"
-	ckeys_allowed = list("joey4298")
 
 /datum/sprite_accessory/tail/rosey2
-	name = "pentatail kitsune tails (Rosey)" //I predict seven tails next. ~CK
+	name = "pentatail kitsune tails" //I predict seven tails next. ~CK
 	desc = ""
 	icon_state = "rosey_five"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-	ckeys_allowed = list("joey4298")
 
 /datum/sprite_accessory/tail/scree
-	name = "green taj tail (Scree)"
+	name = "green taj tail"
 	desc = ""
 	icon_state = "scree"
-	ckeys_allowed = list("scree")
 
 /datum/sprite_accessory/tail/aronai
-	name = "aronai tail (Aronai)"
+	name = "aronai tail"
 	desc = ""
 	icon_state = "aronai"
-	ckeys_allowed = list("arokha")
 
 /datum/sprite_accessory/tail/cabletail
     name = "cabletail"
     desc = "cabletail"
     icon_state = "cabletail"
-    ckeys_allowed = list("tucker0666")
 
 /datum/sprite_accessory/tail/featherfluff_tail
     name = "featherfluff_tail"
     desc = ""
     icon_state = "featherfluff_tail"
-    ckeys_allowed = list("tucker0666")
 
 /datum/sprite_accessory/tail/ketrai_wag
 	name = "fennix tail (vwag)"
 	desc = ""
 	icon_state = "ketraitail"
 	ani_state = "ketraitail_w"
-	//ckeys_allowed = list("ketrai") //They requested it to be enabled for everyone.
 
 /datum/sprite_accessory/tail/ketrainew_wag
 	name = "new fennix tail (vwag)"
@@ -1234,10 +1199,9 @@
 	extra_overlay = "ringtail_mark"
 
 /datum/sprite_accessory/tail/holly
-	name = "tigress tail (Holly)"
+	name = "tigress tail"
 	desc = ""
 	icon_state = "tigresstail"
-	ckeys_allowed = list("hoodoo")
 
 /datum/sprite_accessory/tail/satyr
 	name = "goat legs, colorable"
