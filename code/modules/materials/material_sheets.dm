@@ -349,6 +349,36 @@
 	drop_sound = 'sound/items/drop/wooden.ogg'
 	pickup_sound = 'sound/items/pickup/wooden.ogg'
 
+/obj/item/stack/material/wood/mahogany
+	name = "mahogany wood plank"
+	default_type = MAT_MAHOGANY
+	color = "#792f27"
+
+/obj/item/stack/material/wood/maple
+	name = "maple wood plank"
+	default_type = MAT_MAPLE
+	color = "#d2bc9d"
+
+/obj/item/stack/material/wood/ebony
+	name = "ebony wood plank"
+	default_type = MAT_EBONY
+	color = "#332521"
+
+/obj/item/stack/material/wood/walnut
+	name = "walnut wood plank"
+	default_type = MAT_WALNUT
+	color = "#543c30"
+
+/obj/item/stack/material/wood/bamboo
+	name = "bamboo plank"
+	default_type = MAT_BAMBOO
+	color = "#e6d2ba"
+
+/obj/item/stack/material/wood/yew
+	name = "yew wood plank"
+	default_type = MAT_YEW
+	color = "#e3994e"
+
 /obj/item/stack/material/wood/sif
 	name = "alien wooden plank"
 	color = "#0099cc"

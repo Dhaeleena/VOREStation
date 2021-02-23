@@ -136,10 +136,18 @@
 #define MAT_PHORON			"phoron"
 #define MAT_DIAMOND			"diamond"
 #define MAT_SNOW			"snow"
+
 #define MAT_WOOD			"wood"
+#define MAT_MAHOGANY   		"mahogany"
+#define MAT_MAPLE      		"maple"
+#define MAT_EBONY      		"ebony"
+#define MAT_WALNUT     		"walnut"
+#define MAT_BAMBOO     		"bamboo"
+#define MAT_YEW        		"yew"
 #define MAT_LOG				"log"
 #define MAT_SIFWOOD			"alien wood"
 #define MAT_SIFLOG			"alien log"
+
 #define MAT_STEELHULL		"steel hull"
 #define MAT_PLASTEEL		"plasteel"
 #define MAT_PLASTEELHULL	"plasteel hull"

@@ -141,7 +141,6 @@
 					prob(9);/obj/item/weapon/gun/energy/gun,\
 					prob(8);/obj/item/weapon/gun/energy/ionrifle,\
 					prob(8);/obj/item/weapon/gun/energy/retro,\
-					prob(8);/obj/item/weapon/gun/energy/gun/eluger,\
 					prob(8);/obj/item/weapon/gun/energy/xray,\
 					prob(8);/obj/item/weapon/gun/projectile/automatic/c20r,\
 					prob(8);/obj/item/weapon/gun/projectile/automatic/stg,\

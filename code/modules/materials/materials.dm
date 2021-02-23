@@ -242,6 +242,10 @@ var/list/name_to_material
 /datum/material/proc/combustion_effect(var/turf/T, var/temperature)
 	return
 
+//Porting this over from Bay with the new Bay Walls, incase we wish to use it sometime. For now it is a placeholder for compilation. -Jon
+/datum/material/proc/get_wall_texture()
+	return
+
 // Used by walls to do on-touch things, after checking for crumbling and open-ability.
 /datum/material/proc/wall_touch_special(var/turf/simulated/wall/W, var/mob/living/L)
 	return
@@ -914,6 +918,35 @@ var/list/name_to_material
 	destruction_desc = "splinters"
 	sheet_singular_name = "plank"
 	sheet_plural_name = "planks"
+
+/datum/material/wood/mahogany
+	name = MAT_MAHOGANY
+	icon_colour = "#792f27"
+
+/datum/material/wood/maple
+	name = MAT_MAPLE
+	icon_colour = "#d2bc9d"
+
+/datum/material/wood/ebony
+	name = MAT_EBONY
+	icon_colour = "#332521"
+	weight = 22
+	integrity = 100
+
+/datum/material/wood/walnut
+	name = MAT_WALNUT
+	icon_colour = "#543c30"
+	weight = 20
+
+/datum/material/wood/bamboo
+	name = MAT_BAMBOO
+	icon_colour = "#e6d2ba"
+	weight = 16
+	hardness = 20
+
+/datum/material/wood/yew
+	name = MAT_YEW
+	icon_colour = "#e3994e"
 
 /datum/material/wood/log
 	name = MAT_LOG
