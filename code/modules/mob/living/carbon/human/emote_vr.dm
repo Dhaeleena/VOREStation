@@ -154,12 +154,6 @@
 			message = "cackles hysterically!"
 			m_type = 2
 			playsound(src, 'sound/voice/YeenCackle.ogg', 50, 0, preference = /datum/client_preference/emote_noises)
-		if("nsay")
-			nsay()
-			return TRUE
-		if("nme")
-			nme()
-			return TRUE
 		if("flip")
 			var/list/involved_parts = list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)
 			//Check if they are physically capable

@@ -647,3 +647,9 @@
 /atom/Exited(atom/movable/AM, atom/new_loc)
 	. = ..()
 	SEND_SIGNAL(src, COMSIG_ATOM_EXITED, AM, new_loc)
+
+/atom/proc/get_color()
+	return isnull(color) ? COLOR_WHITE : color
+
+/atom/proc/set_color(var/color)
+	src.color = color

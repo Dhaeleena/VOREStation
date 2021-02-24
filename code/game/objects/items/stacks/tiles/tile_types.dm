@@ -55,6 +55,7 @@
 	singular_name = "wood floor tile"
 	desc = "An easy to fit wooden floor tile."
 	icon_state = "tile-wood"
+	color = "#9c5930"
 	force = 1.0
 	throwforce = 1.0
 	throw_speed = 5
@@ -64,11 +65,47 @@
 	drop_sound = 'sound/items/drop/wooden.ogg'
 	pickup_sound = 'sound/items/pickup/wooden.ogg'
 
+/obj/item/stack/tile/wood/mahogany
+	name = "mahogany wood tile"
+	singular_name = "mahogany wood tile"
+	desc = "An easy to fit rich mahogany tile."
+	color = "#792f27"
+
+/obj/item/stack/tile/wood/maple
+	name = "maple wood tile"
+	singular_name = "maple wood tile"
+	desc = "An easy to fit maple wood tile."
+	color = "#d2bc9d"
+
+/obj/item/stack/tile/wood/ebony
+	name = "ebony wood tile"
+	singular_name = "ebony wood tile"
+	desc = "An easy to fit ebony wood tile."
+	color = "#332521"
+
+/obj/item/stack/tile/wood/walnut
+	name = "walnut wood tile"
+	singular_name = "walnut wood tile"
+	desc = "An easy to fit walnut wood tile."
+	color = "#543c30"
+
+/obj/item/stack/tile/wood/bamboo
+	name = "bamboo tile"
+	singular_name = "bamboo tile"
+	desc = "An easy to fit bamboo tile."
+	color = "#e6d2ba"
+
+/obj/item/stack/tile/wood/yew
+	name = "yew wood tile"
+	singular_name = "yew wood tile"
+	desc = "An easy to fit yew wood tile."
+	color = "#e3994e"
+
 /obj/item/stack/tile/wood/sif
 	name = "alien wood tile"
 	singular_name = "alien wood tile"
 	desc = "An easy to fit wooden floor tile. It's blue!"
-	icon_state = "tile-sifwood"
+	color = "#0099cc"
 
 /obj/item/stack/tile/wood/cyborg
 	name = "wood floor tile synthesizer"

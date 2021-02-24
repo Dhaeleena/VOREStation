@@ -213,8 +213,8 @@
 		if(!(use_species in S.species_allowed))
 			continue
 
-		if(S.ckeys_allowed && !(ckey in S.ckeys_allowed)) //VOREStation add - ckey whitelist check
-			continue //VOREStation add - ckey whitelist check
+		//if(S.ckeys_allowed && !(ckey in S.ckeys_allowed)) //VOREStation add - ckey whitelist check
+		//	continue //VOREStation add - ckey whitelist check
 
 		valid_hairstyles += hairstyle
 
@@ -239,8 +239,8 @@
 		if(!(use_species in S.species_allowed))
 			continue
 
-		if(S.ckeys_allowed && !(ckey in S.ckeys_allowed)) //VOREStation add - ckey whitelist check
-			continue //VOREStation add - ckey whitelist check
+		//if(S.ckeys_allowed && !(ckey in S.ckeys_allowed)) //VOREStation add - ckey whitelist check
+		//	continue //VOREStation add - ckey whitelist check
 
 		valid_facial_hairstyles += facialhairstyle
 

@@ -91,13 +91,6 @@
 	icon_closed = "egg_unique"
 	icon_opened = "egg_unique_open"
 
-/obj/structure/closet/secure_closet/egg/scree
-	name = "Chimera egg"
-	desc = "...You don't know what type of creature layed this egg."
-	icon_state = "egg_scree"
-	icon_closed = "egg_scree"
-	icon_opened = "egg_scree_open"
-
 /obj/structure/closet/secure_closet/egg/xenomorph
 	name = "Xenomorph egg"
 	desc = "Some type of pitch black egg. It has a slimy exterior coating."

@@ -5,7 +5,7 @@ on:
       - master
 
 env:
-  BASENAME: "vorestation"
+  BASENAME: "deepspaceexplorationinitiative"
 
 jobs:
   file_tests:

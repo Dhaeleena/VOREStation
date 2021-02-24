@@ -75,14 +75,50 @@
 	break_tile()
 	return ..()
 
+/turf/simulated/floor/wood/mahogany
+	initial_flooring = /decl/flooring/wood/mahogany
+
+/turf/simulated/floor/wood/broken/mahogany
+	initial_flooring = /decl/flooring/wood/mahogany
+
+/turf/simulated/floor/wood/maple
+	initial_flooring = /decl/flooring/wood/maple
+
+/turf/simulated/floor/wood/broken/maple
+	initial_flooring = /decl/flooring/wood/maple
+
+/turf/simulated/floor/wood/ebony
+	initial_flooring = /decl/flooring/wood/ebony
+
+/turf/simulated/floor/wood/broken/ebony
+	initial_flooring = /decl/flooring/wood/ebony
+
+/turf/simulated/floor/wood/walnut
+	initial_flooring = /decl/flooring/wood/walnut
+
+/turf/simulated/floor/wood/broken/walnut
+	initial_flooring = /decl/flooring/wood/walnut
+
+/turf/simulated/floor/wood/bamboo
+	initial_flooring = /decl/flooring/wood/bamboo
+
+/turf/simulated/floor/wood/broken/bamboo
+	initial_flooring = /decl/flooring/wood/bamboo
+
+/turf/simulated/floor/wood/yew
+	initial_flooring = /decl/flooring/wood/yew
+
+/turf/simulated/floor/wood/broken/yew
+	initial_flooring = /decl/flooring/wood/yew
+
 /turf/simulated/floor/wood/sif
 	name = "alien wooden floor"
-	icon = 'icons/turf/flooring/wood.dmi'
-	icon_state = "sifwood"
+	icon = 'icons/turf/flooring/wood_vr.dmi'
+	icon_state = "wood"
 	initial_flooring = /decl/flooring/wood/sif
 
 /turf/simulated/floor/wood/sif/broken
-	icon_state = "sifwood_broken0" // This gets changed when spawned.
+	icon_state = "wood_broken0" // This gets changed when spawned.
 
 /turf/simulated/floor/wood/sif/broken/Initialize()
 	break_tile()

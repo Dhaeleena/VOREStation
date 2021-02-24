@@ -182,8 +182,7 @@
 									10;new /obj/item/clothing/under/rank/clown,
 									10;new /obj/item/clothing/shoes/clown_shoes,
 									10;new /obj/item/clothing/mask/gas/clown_hat,
-									10;new /obj/item/device/pda/clown,
-									1;new /mob/living/simple_mob/vore/catgirl)
+									10;new /obj/item/device/pda/clown)
 					spark_system.start()
 	product.loc = get_turf(A)
 

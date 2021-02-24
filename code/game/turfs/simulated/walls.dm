@@ -21,6 +21,16 @@
 	var/construction_stage
 
 	var/list/wall_connections = list("0", "0", "0", "0")
+	var/list/other_connections = list("0", "0", "0", "0") //After this to the end of the definition is added trying to port in the Bay Doors -Jon
+
+	var/floor_type = /turf/simulated/floor/plating //turf it leaves after destruction
+	var/paint_color
+	var/stripe_color
+	var/global/list/wall_stripe_cache = list()
+	var/list/blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall/wood, /turf/simulated/wall/walnut, /turf/simulated/wall/maple, /turf/simulated/wall/mahogany, /turf/simulated/wall/ebony)
+	var/list/blend_objects = list(/obj/machinery/door, /obj/structure/wall_frame, /obj/structure/grille, /obj/structure/window/reinforced/full, /obj/structure/window/reinforced/polarized/full, /obj/structure/window/shuttle, ,/obj/structure/window/phoronbasic/full, /obj/structure/window/phoronreinforced/full) // Objects which to blend with
+	var/list/noblend_objects = list(/obj/machinery/door/window) //Objects to avoid blending with (such as children of listed blend objects.
+	var/dismantling = FALSE
 
 // Walls always hide the stuff below them.
 /turf/simulated/wall/levelupdate()
@@ -117,9 +127,15 @@
 			plant.pixel_y = 0
 		plant.update_neighbors()
 
-/turf/simulated/wall/ChangeTurf(var/turf/N, var/tell_universe, var/force_lighting_update, var/preserve_outdoors)
+/turf/simulated/wall/ChangeTurf(var/turf/new_turf, var/tell_universe, var/force_lighting_update, var/preserve_outdoors)
 	clear_plants()
-	..(N, tell_universe, force_lighting_update, preserve_outdoors)
+	. = ..(new_turf, tell_universe, force_lighting_update, preserve_outdoors) //Updated this line and added everything below, attempt to add Baystation Walls -Jon
+	var/turf/nturf = .
+	for(var/turf/simulated/wall/W in RANGE_TURFS(1, nturf))
+		if (W == src)
+			continue
+		W.update_connections()
+		W.update_icon()
 
 //Appearance
 /turf/simulated/wall/examine(mob/user)
@@ -135,7 +151,8 @@
 			. += "<span class='warning'>It looks moderately damaged.</span>"
 		else
 			. += "<span class='danger'>It looks heavily damaged.</span>"
-
+	if(paint_color)
+		to_chat(user, "<span class='notice'>It has a coat of paint applied.</span>") //Added Paintcolor check for Bay Walls
 	if(locate(/obj/effect/overlay/wallrot) in src)
 		. += "<span class='warning'>There is fungus growing on [src].</span>"
 
@@ -213,7 +230,7 @@
 	girder_material = null
 	update_connections(1)
 
-	ChangeTurf(/turf/simulated/floor/plating)
+	ChangeTurf(floor_type)
 
 /turf/simulated/wall/ex_act(severity)
 	switch(severity)
@@ -331,3 +348,13 @@
 		ChangeTurf(/turf/simulated/floor/airless, preserve_outdoors = TRUE)
 		return TRUE
 	return FALSE
+
+/turf/simulated/wall/get_color()
+	return paint_color
+
+/turf/simulated/wall/set_color(var/color)
+	paint_color = color
+	update_icon()
+
+///turf/simulated/wall/is_wall()
+//	return TRUE

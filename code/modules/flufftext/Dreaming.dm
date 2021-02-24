@@ -19,7 +19,7 @@ var/list/dreams = list(
 	//VOREStation Additions after this
 	"slimey surroundings","a sexy squirrel","licking their lips","a gaping maw","an unlikely predator","sinking inside",
 	"vulpine assets","more dakka","churning guts","pools of fluid","an exceptional grip","mawing in faces","gaping throat",
-	"swallowed whole","a fox","a wolf","a cat","a tiger","a dog","a taur","a xenochimera"
+	"swallowed whole","a fox","a wolf","a cat","a tiger","a dog","a taur"
 	)
 
 mob/living/carbon/proc/dream()

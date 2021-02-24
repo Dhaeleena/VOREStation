@@ -141,7 +141,6 @@
 		SPECIES_ZORREN_FLAT = 'icons/mob/species/fennec/mask_vr.dmi',
 		SPECIES_AKULA 		= 'icons/mob/species/akula/mask_vr.dmi',
 		SPECIES_VULPKANIN 	= 'icons/mob/species/vulpkanin/mask.dmi',
-		SPECIES_XENOCHIMERA	= 'icons/mob/species/tajaran/mask_vr.dmi',
 		SPECIES_WEREBEAST	= 'icons/mob/species/werebeast/masks.dmi'
 		)
 //"Spider" 		= 'icons/mob/species/spider/mask_vr.dmi' Add this later when they have custom mask sprites and everything.

@@ -13,6 +13,7 @@
 	var/list/other_connections = list("0", "0", "0", "0")
 	var/list/blend_objects = newlist() // Objects which to blend with
 	var/list/noblend_objects = newlist() //Objects to avoid blending with (such as children of listed blend objects.
+	var/datum/material/material = null
 
 /obj/structure/Initialize()
 	. = ..()
@@ -203,7 +204,7 @@
 		if(can_visually_connect_to(S))
 			if(S.can_visually_connect())
 				if(propagate)
-					//S.update_connections() //Not here
+					S.update_connections()
 					S.update_icon()
 				dirs += get_dir(src, S)
 
@@ -212,7 +213,7 @@
 		other_connections = list("0", "0", "0", "0")
 		return FALSE
 
-	for(var/direction in cardinal)
+	for(var/direction in GLOB.cardinal)
 		var/turf/T = get_step(src, direction)
 		var/success = 0
 		for(var/b_type in blend_objects)
@@ -223,22 +224,25 @@
 					if(istype(W))
 						W.update_connections(1)
 				if(success)
-					break // breaks inner loop
+					break
+			if(success)
+				break
 		if(!success)
-			blend_obj_loop:
-				for(var/obj/O in T)
-					for(var/b_type in blend_objects)
-						if(istype(O, b_type))
-							success = 1
-							for(var/obj/structure/S in T)
-								if(istype(S, src))
-									success = 0
-							for(var/nb_type in noblend_objects)
-								if(istype(O, nb_type))
-									success = 0
+			for(var/obj/O in T)
+				for(var/b_type in blend_objects)
+					if(istype(O, b_type))
+						success = 1
+						for(var/obj/structure/S in T)
+							if(can_visually_connect_to(S))
+								success = 0
+						for(var/nb_type in noblend_objects)
+							if(istype(O, nb_type))
+								success = 0
 
-						if(success)
-							break blend_obj_loop // breaks outer loop
+					if(success)
+						break
+				if(success)
+					break
 
 		if(success)
 			dirs += get_dir(src, T)

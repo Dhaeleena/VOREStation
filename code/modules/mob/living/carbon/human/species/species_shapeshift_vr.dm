@@ -10,8 +10,8 @@
 	var/list/pretty_ear_styles = list("Normal" = null)
 	for(var/path in ear_styles_list)
 		var/datum/sprite_accessory/ears/instance = ear_styles_list[path]
-		if((!instance.ckeys_allowed) || (ckey in instance.ckeys_allowed))
-			pretty_ear_styles[instance.name] = path
+		//if((!instance.ckeys_allowed) || (ckey in instance.ckeys_allowed)) //Removing the Ckey checks for hairs and stuff. No more special unique hairs! -Jon
+		pretty_ear_styles[instance.name] = path //This was intended under the commented off if statement above
 
 	// Present choice to user
 	var/new_ear_style = input(src, "Pick some ears!", "Character Preference", ear_style ? ear_style.name : null) as null|anything in pretty_ear_styles
@@ -64,8 +64,8 @@
 	var/list/pretty_tail_styles = list("Normal" = null)
 	for(var/path in tail_styles_list)
 		var/datum/sprite_accessory/tail/instance = tail_styles_list[path]
-		if((!instance.ckeys_allowed) || (ckey in instance.ckeys_allowed))
-			pretty_tail_styles[instance.name] = path
+		//if((!instance.ckeys_allowed) || (ckey in instance.ckeys_allowed)) //Removing the Ckey checks for tails and stuff! -Jon
+		pretty_tail_styles[instance.name] = path //This was indented in under the commented out if statement above.
 
 	// Present choice to user
 	var/new_tail_style = input(src, "Pick a tail!", "Character Preference", tail_style ? tail_style.name : null) as null|anything in pretty_tail_styles
@@ -118,8 +118,8 @@
 	var/list/pretty_wing_styles = list("None" = null)
 	for(var/path in wing_styles_list)
 		var/datum/sprite_accessory/wing/instance = wing_styles_list[path]
-		if((!instance.ckeys_allowed) || (ckey in instance.ckeys_allowed))
-			pretty_wing_styles[instance.name] = path
+		//if((!instance.ckeys_allowed) || (ckey in instance.ckeys_allowed)) //Removing the Ckey checks for wings! -Jon
+		pretty_wing_styles[instance.name] = path //This was indented in below the commented if statement above
 
 	// Present choice to user
 	var/new_wing_style = input(src, "Pick some wings!", "Character Preference", wing_style ? wing_style.name : null) as null|anything in pretty_wing_styles

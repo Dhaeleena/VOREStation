@@ -1,3 +1,5 @@
+//TODO: Do we want to split this into sub-files for different types of machines? This file is so damn long...
+
 //Tweaked existing vendors
 /obj/machinery/vending/hydroseeds/New()
 	products += list(/obj/item/seeds/shrinkshroom = 3,/obj/item/seeds/megashroom = 3)
@@ -291,11 +293,9 @@
 					/obj/item/clothing/gloves/orange = 5,
 					/obj/item/clothing/gloves/purple = 5,
 					/obj/item/clothing/gloves/red = 5,
-					/obj/item/clothing/gloves/fluff/siren = 5,
 					/obj/item/clothing/gloves/white = 5,
 					/obj/item/clothing/gloves/duty = 5,
 					/obj/item/clothing/shoes/athletic = 5,
-					/obj/item/clothing/shoes/boots/fluff/siren = 5,
 					/obj/item/clothing/shoes/slippers = 5,
 					/obj/item/clothing/shoes/boots/cowboy/classic = 5,
 					/obj/item/clothing/shoes/boots/cowboy = 5,
@@ -349,11 +349,9 @@
 					/obj/item/clothing/gloves/orange = 50,
 					/obj/item/clothing/gloves/purple = 50,
 					/obj/item/clothing/gloves/red = 50,
-					/obj/item/clothing/gloves/fluff/siren = 50,
 					/obj/item/clothing/gloves/white = 50,
 					/obj/item/clothing/gloves/duty = 150,
 					/obj/item/clothing/shoes/athletic = 50,
-					/obj/item/clothing/shoes/boots/fluff/siren = 50,
 					/obj/item/clothing/shoes/slippers = 50,
 					/obj/item/clothing/shoes/boots/cowboy/classic = 50,
 					/obj/item/clothing/shoes/boots/cowboy = 50,
@@ -1051,7 +1049,7 @@
 					/obj/item/device/laser_pointer = 200,
 					/obj/item/clothing/glasses/omnihud = 100)
 	premium = list(/obj/item/device/perfect_tele/one_beacon = 1)
-	contraband = list(/obj/item/weapon/disk/nifsoft/compliance = 1)
+	contraband = list()
 
 /obj/machinery/vending/loadout/loadout_misc
 	name = "Bits and Bobs"
@@ -1302,7 +1300,7 @@
 					/obj/item/clothing/head/bowler = 3,
 					/obj/item/clothing/head/plaguedoctorhat = 3,
 					/obj/item/clothing/suit/bio_suit/plaguedoctorsuit = 3,
-					/obj/item/clothing/mask/gas/plaguedoctor/fluff = 3,
+					/obj/item/clothing/mask/gas/plaguedoctor = 3,
 					/obj/item/clothing/under/owl = 3,
 					/obj/item/clothing/mask/gas/owl_mask = 3,
 					/obj/item/clothing/under/waiter = 3,
@@ -1367,7 +1365,7 @@
 					/obj/item/clothing/head/bowler = 200,
 					/obj/item/clothing/head/plaguedoctorhat = 300,
 					/obj/item/clothing/suit/bio_suit/plaguedoctorsuit = 300,
-					/obj/item/clothing/mask/gas/plaguedoctor/fluff = 600,
+					/obj/item/clothing/mask/gas/plaguedoctor = 600,
 					/obj/item/clothing/under/owl = 400,
 					/obj/item/clothing/mask/gas/owl_mask = 400,
 					/obj/item/clothing/under/waiter = 100,
@@ -1652,11 +1650,9 @@
 					/obj/item/clothing/gloves/orange = 5,
 					/obj/item/clothing/gloves/purple = 5,
 					/obj/item/clothing/gloves/red = 5,
-					/obj/item/clothing/gloves/fluff/siren = 5,
 					/obj/item/clothing/gloves/white = 5,
 					/obj/item/clothing/gloves/duty = 5,
 					/obj/item/clothing/shoes/athletic = 5,
-					/obj/item/clothing/shoes/boots/fluff/siren = 5,
 					/obj/item/clothing/shoes/slippers = 5,
 					/obj/item/clothing/shoes/boots/cowboy/classic = 5,
 					/obj/item/clothing/shoes/boots/cowboy = 5,
@@ -1710,11 +1706,9 @@
 					/obj/item/clothing/gloves/orange = 50,
 					/obj/item/clothing/gloves/purple = 50,
 					/obj/item/clothing/gloves/red = 50,
-					/obj/item/clothing/gloves/fluff/siren = 50,
 					/obj/item/clothing/gloves/white = 50,
 					/obj/item/clothing/gloves/duty = 150,
 					/obj/item/clothing/shoes/athletic = 50,
-					/obj/item/clothing/shoes/boots/fluff/siren = 50,
 					/obj/item/clothing/shoes/slippers = 50,
 					/obj/item/clothing/shoes/boots/cowboy/classic = 50,
 					/obj/item/clothing/shoes/boots/cowboy = 50,
@@ -2412,7 +2406,7 @@
 					/obj/item/device/laser_pointer = 200,
 					/obj/item/clothing/glasses/omnihud = 100)
 	premium = list(/obj/item/device/perfect_tele/one_beacon = 1)
-	contraband = list(/obj/item/weapon/disk/nifsoft/compliance = 1)
+	contraband = list()
 
 /obj/machinery/vending/loadout/loadout_misc
 	name = "Bits and Bobs"
@@ -2663,7 +2657,7 @@
 					/obj/item/clothing/head/bowler = 3,
 					/obj/item/clothing/head/plaguedoctorhat = 3,
 					/obj/item/clothing/suit/bio_suit/plaguedoctorsuit = 3,
-					/obj/item/clothing/mask/gas/plaguedoctor/fluff = 3,
+					/obj/item/clothing/mask/gas/plaguedoctor = 3,
 					/obj/item/clothing/under/owl = 3,
 					/obj/item/clothing/mask/gas/owl_mask = 3,
 					/obj/item/clothing/under/waiter = 3,
@@ -2728,7 +2722,7 @@
 					/obj/item/clothing/head/bowler = 200,
 					/obj/item/clothing/head/plaguedoctorhat = 300,
 					/obj/item/clothing/suit/bio_suit/plaguedoctorsuit = 300,
-					/obj/item/clothing/mask/gas/plaguedoctor/fluff = 600,
+					/obj/item/clothing/mask/gas/plaguedoctor = 600,
 					/obj/item/clothing/under/owl = 400,
 					/obj/item/clothing/mask/gas/owl_mask = 400,
 					/obj/item/clothing/under/waiter = 100,
@@ -2826,7 +2820,7 @@
 					/obj/item/clothing/head/bowler = 3,
 					/obj/item/clothing/head/plaguedoctorhat = 3,
 					/obj/item/clothing/suit/bio_suit/plaguedoctorsuit = 3,
-					/obj/item/clothing/mask/gas/plaguedoctor/fluff = 3,
+					/obj/item/clothing/mask/gas/plaguedoctor = 3,
 					/obj/item/clothing/under/owl = 3,
 					/obj/item/clothing/mask/gas/owl_mask = 3,
 					/obj/item/clothing/under/waiter = 3,
@@ -2883,11 +2877,9 @@
 					/obj/item/clothing/gloves/orange = 10,
 					/obj/item/clothing/gloves/purple = 10,
 					/obj/item/clothing/gloves/red = 10,
-					/obj/item/clothing/gloves/fluff/siren = 10,
 					/obj/item/clothing/gloves/white = 10,
 					/obj/item/clothing/gloves/duty = 10,
 					/obj/item/clothing/shoes/athletic = 10,
-					/obj/item/clothing/shoes/boots/fluff/siren = 10,
 					/obj/item/clothing/shoes/slippers = 10,
 					/obj/item/clothing/shoes/boots/cowboy/classic = 10,
 					/obj/item/clothing/shoes/boots/cowboy = 10,
@@ -3378,7 +3370,6 @@
 					/obj/item/device/laser_pointer = 3,
 					/obj/item/clothing/glasses/omnihud = 10,
 					/obj/item/device/perfect_tele/one_beacon = 1,
-					/obj/item/weapon/disk/nifsoft/compliance = 1,
 					/obj/item/device/perfect_tele/alien = 10)
 
 /obj/machinery/vending/event/loadout_misc //FOR FACILITATING AND EQUIPPING EVENTS, DO NOT PLACE ON THE NORMAL MAP//
@@ -3595,7 +3586,7 @@
 					/obj/item/clothing/head/bowler = 3,
 					/obj/item/clothing/head/plaguedoctorhat = 3,
 					/obj/item/clothing/suit/bio_suit/plaguedoctorsuit = 3,
-					/obj/item/clothing/mask/gas/plaguedoctor/fluff = 3,
+					/obj/item/clothing/mask/gas/plaguedoctor = 3,
 					/obj/item/clothing/under/owl = 3,
 					/obj/item/clothing/mask/gas/owl_mask = 3,
 					/obj/item/clothing/under/waiter = 3,
@@ -4076,7 +4067,6 @@
 					/obj/item/weapon/reagent_containers/food/snacks/meat/chicken = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/corgi = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/crab = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/meat/fox = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/grubmeat = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/human = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/monkey = 10,
@@ -4509,7 +4499,6 @@
 					/obj/item/weapon/reagent_containers/food/snacks/meat/chicken = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/corgi = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/crab = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/meat/fox = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/grubmeat = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/human = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/meat/monkey = 10,

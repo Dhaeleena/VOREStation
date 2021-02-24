@@ -84,6 +84,30 @@
 	name = "stack of wood"
 	type_to_spawn = /obj/item/stack/material/wood
 
+/obj/fiftyspawner/mahogany
+	name = "stack of mahogany wood"
+	type_to_spawn = /obj/item/stack/material/wood/mahogany
+
+/obj/fiftyspawner/maple
+	name = "stack of maple wood"
+	type_to_spawn = /obj/item/stack/material/wood/maple
+
+/obj/fiftyspawner/ebony
+	name = "stack of ebony wood"
+	type_to_spawn = /obj/item/stack/material/wood/ebony
+
+/obj/fiftyspawner/walnut
+	name = "stack of walnut wood"
+	type_to_spawn = /obj/item/stack/material/wood/walnut
+
+/obj/fiftyspawner/bamboo
+	name = "stack of bamboo"
+	type_to_spawn = /obj/item/stack/material/wood/bamboo
+
+/obj/fiftyspawner/yew
+	name = "stack of yew wood"
+	type_to_spawn = /obj/item/stack/material/wood/yew
+
 /obj/fiftyspawner/sifwood
 	name = "stack of alien wood"
 	type_to_spawn = /obj/item/stack/material/wood/sif

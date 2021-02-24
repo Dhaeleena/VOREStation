@@ -89,8 +89,40 @@
 /turf/simulated/wall/durasteel/Initialize(mapload)
 	. = ..(mapload, "durasteel", "durasteel")
 
+/turf/simulated/wall/wood
+	blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall)
+	icon_state = "woodneric"
+
 /turf/simulated/wall/wood/Initialize(mapload)
-	. = ..(mapload,  MAT_WOOD)
+	..(mapload, MAT_WOOD)
+
+/turf/simulated/wall/mahogany
+	blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall)
+	icon_state = "woodneric"
+
+/turf/simulated/wall/mahogany/Initialize(mapload)
+	..(mapload, MAT_MAHOGANY)
+
+/turf/simulated/wall/maple
+	blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall)
+	icon_state = "woodneric"
+
+/turf/simulated/wall/maple/Initialize(mapload)
+	..(mapload, MAT_MAPLE)
+
+/turf/simulated/wall/ebony
+	blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall)
+	icon_state = "woodneric"
+
+/turf/simulated/wall/ebony/Initialize(mapload)
+	..(mapload, MAT_EBONY)
+
+/turf/simulated/wall/walnut
+	blend_turfs = list(/turf/simulated/wall/cult, /turf/simulated/wall)
+	icon_state = "woodneric"
+
+/turf/simulated/wall/walnut/Initialize(mapload)
+	..(mapload, MAT_WALNUT)
 
 /turf/simulated/wall/sifwood/Initialize(mapload)
 	. = ..(mapload,  MAT_SIFWOOD)

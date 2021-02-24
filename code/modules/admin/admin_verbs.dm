@@ -488,34 +488,6 @@
 		config.allow_drone_spawn = !config.allow_drone_spawn
 		message_admins("Admin [key_name_admin(usr)] has [config.allow_drone_spawn ? "en" : "dis"]abled maintenance drones.", 1)
 
-/client/proc/man_up(mob/T as mob in mob_list)
-	set category = "Fun"
-	set name = "Man Up"
-	set desc = "Tells mob to man up and deal with it."
-	set popup_menu = FALSE //VOREStation Edit - Declutter.
-
-	if(alert("Are you sure you want to tell them to man up?","Confirmation","Deal with it","No")=="No") return
-
-	to_chat(T, "<span class='filter_system notice'><b><font size=3>Man up and deal with it.</font></b></span>")
-	to_chat(T, "<span class='filter_system notice'>Move along.</span>")
-
-	log_admin("[key_name(usr)] told [key_name(T)] to man up and deal with it.")
-	message_admins("<font color='blue'>[key_name_admin(usr)] told [key_name(T)] to man up and deal with it.</font>", 1)
-
-/client/proc/global_man_up()
-	set category = "Fun"
-	set name = "Man Up Global"
-	set desc = "Tells everyone to man up and deal with it."
-
-	if(alert("Are you sure you want to tell the whole server up?","Confirmation","Deal with it","No")=="No") return
-
-	for (var/mob/T as mob in mob_list)
-		to_chat(T, "<br><center><span class='filter_system notice'><b><font size=4>Man up.<br> Deal with it.</font></b><br>Move along.</span></center><br>")
-		T << 'sound/voice/ManUp1.ogg'
-
-	log_admin("[key_name(usr)] told everyone to man up and deal with it.")
-	message_admins("<font color='blue'>[key_name_admin(usr)] told everyone to man up and deal with it.</font>", 1)
-
 /client/proc/give_spell(mob/T as mob in mob_list) // -- Urist
 	set category = "Fun"
 	set name = "Give Spell"

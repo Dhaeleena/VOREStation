@@ -23,11 +23,6 @@
 	desc = ""
 	value = CATALOGUER_REWARD_TRIVIAL
 
-/datum/category_item/catalogue/fauna/xenochimera
-	name = "Sapients - Xenochimera"
-	desc = ""
-	value = CATALOGUER_REWARD_TRIVIAL
-
 /datum/category_item/catalogue/fauna/vulpkanin
 	name = "Sapients - Vulpkanin"
 	desc = ""
@@ -47,11 +42,6 @@
 	name = "Sapients - Zorren"
 	desc = ""
 	value = CATALOGUER_REWARD_TRIVIAL
-
-/datum/category_item/catalogue/fauna/shadekin
-	name = "Sapients - Shadekin"
-	desc = ""
-	value = CATALOGUER_REWARD_EASY
 
 /datum/category_item/catalogue/fauna/custom_species
 	name = "Sapients - Other"

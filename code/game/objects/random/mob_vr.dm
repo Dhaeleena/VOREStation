@@ -32,7 +32,6 @@
 					prob(9);/obj/item/weapon/cane/concealed,\
 					prob(9);/obj/item/weapon/gun/energy/gun,\
 					prob(8);/obj/item/weapon/gun/energy/retro,\
-					prob(8);/obj/item/weapon/gun/energy/gun/eluger,\
 					prob(8);/obj/item/weapon/gun/energy/xray,\
 					prob(8);/obj/item/weapon/gun/projectile/automatic/c20r,\
 					prob(8);/obj/item/weapon/melee/energy/sword,\
@@ -70,7 +69,7 @@
 					prob(2);/obj/item/weapon/gun/projectile/automatic/l6_saw,\
 					prob(2);/obj/item/weapon/gun/energy/gun/burst,\
 					prob(2);/obj/item/weapon/storage/box/frags,\
-					prob(2);/obj/item/weapon/twohanded/fireaxe,\
+					prob(2);/obj/item/weapon/material/twohanded/fireaxe,\
 					prob(2);/obj/item/weapon/gun/projectile/luger/brown,\
 					prob(2);/obj/item/weapon/gun/launcher/crossbow,\
 				/*	prob(1);/obj/item/weapon/gun/projectile/automatic/battlerifle,\ */ // Too OP

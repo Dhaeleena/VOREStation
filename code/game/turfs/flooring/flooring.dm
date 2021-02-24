@@ -27,6 +27,7 @@ var/list/flooring_types
 	var/desc
 	var/icon
 	var/icon_base // initial base icon_state without edges or corners.
+	var/color
 
 	var/has_base_range // This will pick between a range of 0 - x. Number icon_states accordingly.
 					   // Note that this will append a 0 - x number automatically to icon_base, but NOT the dmi. Do icon_base = "grass", but name grass0 inside the dmi. etc etc.
@@ -453,12 +454,13 @@ var/list/flooring_types
 
 /decl/flooring/wood
 	name = "wooden floor"
-	desc = "Polished redwood planks."
+	desc = "Polished wooden planks."
 	icon = 'icons/turf/flooring/wood_vr.dmi'
 	icon_base = "wood"
 	has_damage_range = 6
 	damage_temperature = T0C+200
 	descriptor = "planks"
+	color = "#9c5930"
 	build_type = /obj/item/stack/tile/wood
 	flags = TURF_CAN_BREAK | TURF_REMOVE_CROWBAR | TURF_REMOVE_SCREWDRIVER
 	footstep_sounds = list("human" = list(
@@ -468,11 +470,34 @@ var/list/flooring_types
 		'sound/effects/footstep/wood4.ogg',
 		'sound/effects/footstep/wood5.ogg'))
 
+/decl/flooring/wood/mahogany
+	color = "#792f27"
+	build_type = /obj/item/stack/tile/wood/mahogany
+
+/decl/flooring/wood/maple
+	color = "#d2bc9d"
+	build_type = /obj/item/stack/tile/wood/maple
+
+/decl/flooring/wood/ebony
+	color = "#332521"
+	build_type = /obj/item/stack/tile/wood/ebony
+
+/decl/flooring/wood/walnut
+	color = "#543c30"
+	build_type = /obj/item/stack/tile/wood/walnut
+
+/decl/flooring/wood/bamboo
+	color = "#e6d2ba"
+	build_type = /obj/item/stack/tile/wood/bamboo
+
+/decl/flooring/wood/yew
+	color = "#e3994e"
+	build_type = /obj/item/stack/tile/wood/yew
+
 /decl/flooring/wood/sif
 	name = "alien wooden floor"
 	desc = "Polished alien wood planks."
-	icon = 'icons/turf/flooring/wood.dmi'
-	icon_base = "sifwood"
+	color = "#0099cc"
 	build_type = /obj/item/stack/tile/wood/sif
 
 /decl/flooring/reinforced

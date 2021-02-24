@@ -44,10 +44,11 @@
 	cryo_at = 0
 
 	//Mental stuff the game doesn't keep mentally
-	if(istype(M) || istype(M,/mob/living/carbon/brain/caught_soul))
+	if(istype(M)) //Removed if(!isSynthetic() || !nif || !nif.flag_check(NIF_O_PRESSURESEAL,NIF_FLAGS_OTHER)) while removing NIFs
 		id_gender = M.identifying_gender
 		languages = M.languages.Copy()
 		mind_oocnotes = M.ooc_notes
+		/*
 		if(M.nif)
 			nif_path = M.nif.type
 			nif_durability = M.nif.durability
@@ -58,6 +59,7 @@
 					nifsofts += nifsoft.type
 			nif_software = nifsofts
 			nif_savedata = M.nif.save_data.Copy()
+		*/
 
 	last_update = world.time
 
