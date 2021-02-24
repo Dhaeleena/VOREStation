@@ -22,6 +22,7 @@ var/image/no_ceiling_image = null
 		name = flooring.name
 		desc = flooring.desc
 		icon = flooring.icon
+		color = flooring.color
 
 		if(flooring_override)
 			icon_state = flooring_override

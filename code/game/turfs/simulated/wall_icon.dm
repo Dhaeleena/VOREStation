@@ -160,36 +160,7 @@
 	wall_connections = dirs_to_corner_states(wall_dirs)
 	other_connections = dirs_to_corner_states(other_dirs)
 
-
-	/* //Commenting out the old Virgo update_connections to replace with Bay's -Jon
-	var/list/dirs = list()
-	for(var/turf/simulated/wall/W in orange(src, 1))
-		if(!W.material)
-			continue
-		if(propagate)
-			W.update_connections()
-			W.update_icon()
-		if(can_join_with(W))
-			dirs += get_dir(src, W)
-
-	wall_connections = dirs_to_corner_states(dirs)
-	*/
-
 /turf/simulated/wall/proc/can_join_with(var/turf/simulated/wall/W)
-	/* //Commenting out the old Virgo can_join_with and replacing with Bay's utilizing their lists -Jon
-	//VOREStation Edit Start
-	//No blending if no material
-	if(!material || !W.material)
-		return 0
-	//We can blend if either is the same, or a subtype, of the other one
-	if(istype(W.material, material.type) || istype(material, W.material.type))
-		return 1
-	//Also blend if they have the same iconbase
-	if(material.icon_base == W.material.icon_base)
-		return 1
-	//VOREStation Edit End
-	*/
-
 	if(material && W.material && material.icon_base == W.material.icon_base)
 		if((reinf_material && W.reinf_material) || (!reinf_material && !W.reinf_material))
 			return 1

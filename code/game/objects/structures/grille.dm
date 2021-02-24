@@ -1,25 +1,70 @@
 /obj/structure/grille
 	name = "grille"
 	desc = "A flimsy lattice of metal rods, with screws to secure it to the floor."
-	icon = 'icons/obj/structures_vr.dmi' // VOREStation Edit - New icons
+	icon = 'icons/obj/grille.dmi'
 	icon_state = "grille"
+	color = "#666666"
 	density = 1
 	anchored = 1
 	pressure_resistance = 5*ONE_ATMOSPHERE
 	layer = TABLE_LAYER
 	explosion_resistance = 1
+	var/init_material = DEFAULT_WALL_MATERIAL
 	var/health = 10
 	var/destroyed = 0
 
+	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
+	noblend_objects = list(/obj/machinery/door/window)
+
+/obj/structure/grille/Initialize(mapload, var/new_material)
+	. = ..()
+	if(!new_material)
+		new_material = init_material
+	material = get_material_by_name(new_material)
+
+	name = "[material.display_name] grille"
+	desc = "A lattice of [material.display_name] rods, with screws to secure it to the floor."
+	color =  material.icon_colour
+	health = max(1, round(material.integrity/15))
+	update_connections(1)
+	update_icon()
+
+/obj/structure/grille/Destroy()
+	var/turf/location = loc
+	. = ..()
+	for(var/obj/structure/grille/G in orange(1, location))
+		G.update_connections()
+		G.update_icon()
 
 /obj/structure/grille/ex_act(severity)
 	qdel(src)
 
 /obj/structure/grille/update_icon()
+	var/on_frame = is_on_frame()
+
+	overlays.Cut()
 	if(destroyed)
-		icon_state = "[initial(icon_state)]-b"
+		if(on_frame)
+			icon_state = "broke_onframe"
+		else
+			icon_state = "broken"
 	else
-		icon_state = initial(icon_state)
+		var/image/I
+		icon_state = ""
+		if(on_frame)
+			for(var/i = 1 to 4)
+				if(other_connections[i] != "0")
+					I = image(icon, "grille_other_onframe[connections[i]]", dir = 1<<(i-1))
+				else
+					I = image(icon, "grille_onframe[connections[i]]", dir = 1<<(i-1))
+				overlays += I
+		else
+			for(var/i = 1 to 4)
+				if(other_connections[i] != "0")
+					I = image(icon, "grille_other[connections[i]]", dir = 1<<(i-1))
+				else
+					I = image(icon, "grille[connections[i]]", dir = 1<<(i-1))
+				overlays += I
 
 /obj/structure/grille/Bumped(atom/user)
 	if(ismob(user)) shock(user, 70)
@@ -222,7 +267,7 @@
 // Used in mapping to avoid
 /obj/structure/grille/broken
 	destroyed = 1
-	icon_state = "grille-b"
+	icon_state = "broken"
 	density = 0
 	New()
 		..()
@@ -280,6 +325,10 @@
 			WD.anchored = TRUE
 			return TRUE
 	return FALSE
+
+/obj/structure/grille/proc/is_on_frame()
+	if(locate(/obj/structure/wall_frame) in loc)
+		return TRUE
 
 /obj/structure/grille/take_damage(var/damage)
 	health -= damage
