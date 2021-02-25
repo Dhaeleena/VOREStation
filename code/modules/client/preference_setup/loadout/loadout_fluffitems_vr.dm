@@ -29,7 +29,7 @@
 
 //  0-9 CKEYS
 
-//  A CKEYS/datum/gear/fluff/lethe_helmet
+//  A CKEYS
 
 //  B CKEYS
 

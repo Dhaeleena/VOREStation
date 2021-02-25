@@ -345,6 +345,7 @@
 	name = "wooden plank"
 	icon_state = "sheet-wood"
 	default_type = MAT_WOOD
+	color = WOOD_COLOR_GENERIC
 	strict_color_stacking = TRUE
 	drop_sound = 'sound/items/drop/wooden.ogg'
 	pickup_sound = 'sound/items/pickup/wooden.ogg'
@@ -352,36 +353,36 @@
 /obj/item/stack/material/wood/mahogany
 	name = "mahogany wood plank"
 	default_type = MAT_MAHOGANY
-	color = "#792f27"
+	color = WOOD_COLOR_RICH
 
 /obj/item/stack/material/wood/maple
 	name = "maple wood plank"
 	default_type = MAT_MAPLE
-	color = "#d2bc9d"
+	color = WOOD_COLOR_PALE
 
 /obj/item/stack/material/wood/ebony
 	name = "ebony wood plank"
 	default_type = MAT_EBONY
-	color = "#332521"
+	color = WOOD_COLOR_BLACK
 
 /obj/item/stack/material/wood/walnut
 	name = "walnut wood plank"
 	default_type = MAT_WALNUT
-	color = "#543c30"
+	color = WOOD_COLOR_CHOCOLATE
 
 /obj/item/stack/material/wood/bamboo
 	name = "bamboo plank"
 	default_type = MAT_BAMBOO
-	color = "#e6d2ba"
+	color = WOOD_COLOR_PALE2
 
 /obj/item/stack/material/wood/yew
 	name = "yew wood plank"
 	default_type = MAT_YEW
-	color = "#e3994e"
+	color = WOOD_COLOR_YELLOW
 
 /obj/item/stack/material/wood/sif
 	name = "alien wooden plank"
-	color = "#0099cc"
+	color = WOOD_COLOR_LIGHTBLUE
 	default_type = MAT_SIFWOOD
 
 /obj/item/stack/material/log
@@ -400,7 +401,7 @@
 /obj/item/stack/material/log/sif
 	name = "alien log"
 	default_type = MAT_SIFLOG
-	color = "#0099cc"
+	color = WOOD_COLOR_LIGHTBLUE
 	plank_type = /obj/item/stack/material/wood/sif
 
 /obj/item/stack/material/log/attackby(var/obj/item/W, var/mob/user)

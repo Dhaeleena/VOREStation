@@ -219,7 +219,7 @@ var/global/mob/living/carbon/human/dummy/mannequin/sleevemate_mob
 			to_chat(usr,"<span class='warning'>There is already someone's mind stored inside</span>")
 			return
 
-		var/choice = alert(usr,"This will remove the target's mind from their body (and from the game as long as they're in the sleevemate). You can put them into a (mindless) body, a NIF, or back them up for normal resleeving, but you should probably have a plan in advance so you don't leave them unable to interact for too long. Continue?","Confirmation","Continue","Cancel")
+		var/choice = alert(usr,"This will remove the target's mind from their body (and from the game as long as they're in the sleevemate). You can put them into a (mindless) body, or back them up for normal resleeving, but you should probably have a plan in advance so you don't leave them unable to interact for too long. Continue?","Confirmation","Continue","Cancel")
 		if(choice == "Continue" && usr.get_active_hand() == src && usr.Adjacent(target))
 
 			usr.visible_message("<span class='warning'>[usr] begins downloading [target]'s mind!</span>","<span class='notice'>You begin downloading [target]'s mind!</span>")

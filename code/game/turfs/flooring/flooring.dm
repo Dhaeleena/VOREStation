@@ -460,7 +460,7 @@ var/list/flooring_types
 	has_damage_range = 6
 	damage_temperature = T0C+200
 	descriptor = "planks"
-	color = "#9c5930"
+	color = WOOD_COLOR_GENERIC
 	build_type = /obj/item/stack/tile/wood
 	flags = TURF_CAN_BREAK | TURF_REMOVE_CROWBAR | TURF_REMOVE_SCREWDRIVER
 	footstep_sounds = list("human" = list(
@@ -471,33 +471,33 @@ var/list/flooring_types
 		'sound/effects/footstep/wood5.ogg'))
 
 /decl/flooring/wood/mahogany
-	color = "#792f27"
+	color = WOOD_COLOR_RICH
 	build_type = /obj/item/stack/tile/wood/mahogany
 
 /decl/flooring/wood/maple
-	color = "#d2bc9d"
+	color = WOOD_COLOR_PALE
 	build_type = /obj/item/stack/tile/wood/maple
 
 /decl/flooring/wood/ebony
-	color = "#332521"
+	color = WOOD_COLOR_BLACK
 	build_type = /obj/item/stack/tile/wood/ebony
 
 /decl/flooring/wood/walnut
-	color = "#543c30"
+	color = WOOD_COLOR_CHOCOLATE
 	build_type = /obj/item/stack/tile/wood/walnut
 
 /decl/flooring/wood/bamboo
-	color = "#e6d2ba"
+	color = WOOD_COLOR_PALE2
 	build_type = /obj/item/stack/tile/wood/bamboo
 
 /decl/flooring/wood/yew
-	color = "#e3994e"
+	color = WOOD_COLOR_YELLOW
 	build_type = /obj/item/stack/tile/wood/yew
 
 /decl/flooring/wood/sif
 	name = "alien wooden floor"
 	desc = "Polished alien wood planks."
-	color = "#0099cc"
+	color = WOOD_COLOR_LIGHTBLUE
 	build_type = /obj/item/stack/tile/wood/sif
 
 /decl/flooring/reinforced

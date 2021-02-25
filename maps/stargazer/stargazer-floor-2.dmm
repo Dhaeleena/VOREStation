@@ -586,7 +586,7 @@
 "Mw" = (/obj/machinery/door/airlock/glass_research{name = "Xenoflora Research"; req_access = list(55)},/turf/simulated/floor/tiled,/area/space)
 "MI" = (/obj/structure/table/steel,/obj/item/device/integrated_electronics/debugger{pixel_x = -5; pixel_y = 0},/obj/item/device/integrated_electronics/wirer{pixel_x = 5; pixel_y = 0},/turf/simulated/floor/tiled/techfloor,/area/rnd/workshop)
 "ML" = (/obj/machinery/computer/robotics,/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/mauve/border{dir = 1},/turf/simulated/floor/tiled,/area/space)
-"MT" = (/obj/machinery/pros_fabricator{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/assembly/robotics)
+"MT" = (/obj/machinery/mecha_part_fabricator/pros{dir = 1},/turf/simulated/floor/tiled/steel_grid,/area/assembly/robotics)
 "Nh" = (/obj/machinery/door/blast/regular{density = 0; dir = 4; icon_state = "pdoor0"; id = "misclab"; name = "Test Chamber Blast Doors"; opacity = 0},/obj/machinery/door/window/southright{name = "Test Chamber"; req_one_access = list(7,29)},/obj/machinery/door/window/southright{dir = 1; name = "Test Chamber"; req_one_access = list(7,29)},/turf/simulated/floor/tiled/steel_grid,/area/space)
 "No" = (/obj/structure/table/steel,/obj/effect/floor_decal/techfloor{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/server)
 "NB" = (/obj/structure/table/standard,/obj/item/weapon/storage/toolbox/mechanical{pixel_x = 2; pixel_y = 3},/obj/item/weapon/storage/belt/utility,/obj/item/clothing/glasses/welding,/turf/simulated/floor/tiled,/area/rnd/research)
