@@ -899,7 +899,7 @@ var/list/name_to_material
 /datum/material/wood
 	name = MAT_WOOD
 	stack_type = /obj/item/stack/material/wood
-	icon_colour = "#9c5930"
+	icon_colour = WOOD_COLOR_GENERIC
 	integrity = 50
 	icon_base = "wood"
 	explosion_resistance = 2
@@ -921,32 +921,32 @@ var/list/name_to_material
 
 /datum/material/wood/mahogany
 	name = MAT_MAHOGANY
-	icon_colour = "#792f27"
+	icon_colour = WOOD_COLOR_RICH
 
 /datum/material/wood/maple
 	name = MAT_MAPLE
-	icon_colour = "#d2bc9d"
+	icon_colour = WOOD_COLOR_PALE
 
 /datum/material/wood/ebony
 	name = MAT_EBONY
-	icon_colour = "#332521"
+	icon_colour = WOOD_COLOR_BLACK
 	weight = 22
 	integrity = 100
 
 /datum/material/wood/walnut
 	name = MAT_WALNUT
-	icon_colour = "#543c30"
+	icon_colour = WOOD_COLOR_CHOCOLATE
 	weight = 20
 
 /datum/material/wood/bamboo
 	name = MAT_BAMBOO
-	icon_colour = "#e6d2ba"
+	icon_colour = WOOD_COLOR_PALE2
 	weight = 16
 	hardness = 20
 
 /datum/material/wood/yew
 	name = MAT_YEW
-	icon_colour = "#e3994e"
+	icon_colour = WOOD_COLOR_YELLOW
 
 /datum/material/wood/log
 	name = MAT_LOG
@@ -959,7 +959,7 @@ var/list/name_to_material
 
 /datum/material/wood/log/sif
 	name = MAT_SIFLOG
-	icon_colour = "#0099cc" // Cyan-ish
+	icon_colour = WOOD_COLOR_LIGHTBLUE
 	stack_origin_tech = list(TECH_MATERIAL = 2, TECH_BIO = 2)
 	stack_type = /obj/item/stack/material/log/sif
 
@@ -972,7 +972,7 @@ var/list/name_to_material
 /datum/material/wood/sif
 	name = MAT_SIFWOOD
 	stack_type = /obj/item/stack/material/wood/sif
-	icon_colour = "#0099cc" // Cyan-ish
+	icon_colour = WOOD_COLOR_LIGHTBLUE
 	stack_origin_tech = list(TECH_MATERIAL = 2, TECH_BIO = 2) // Alien wood would presumably be more interesting to the analyzer.
 
 /datum/material/cardboard

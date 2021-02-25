@@ -121,13 +121,15 @@
 #define	COMMS_COLOR_SYNDICATE  "#6d3f40"
 #define	COMMS_COLOR_SKRELL     "#7331c4"
 
-#define WOOD_COLOR_GENERIC     "#d5a66e"
-#define WOOD_COLOR_RICH        "#792f27"
-#define WOOD_COLOR_PALE        "#d2bc9d"
-#define WOOD_COLOR_PALE2       "#e6d2ba"
-#define WOOD_COLOR_BLACK       "#332521"
-#define WOOD_COLOR_CHOCOLATE   "#543c30"
-#define WOOD_COLOR_YELLOW      "#e3994e"
+//Wood color defines
+#define WOOD_COLOR_GENERIC     "#9c5930" //Regular Wood
+#define WOOD_COLOR_RICH        "#792f27" //Mahogany Wood
+#define WOOD_COLOR_PALE        "#d2bc9d" //Maple Wood
+#define WOOD_COLOR_PALE2       "#e6d2ba" //Bamboo Wood
+#define WOOD_COLOR_BLACK       "#332521" //Ebony Wood
+#define WOOD_COLOR_CHOCOLATE   "#543c30" //Walnut Wood
+#define WOOD_COLOR_YELLOW      "#e3994e" //Yew Wood
+#define WOOD_COLOR_LIGHTBLUE   "#0099cc" //Sif Wood
 
 #define GLASS_COLOR            "#74c1ee"
 #define GLASS_COLOR_PHORON     "#7c3a9a"
