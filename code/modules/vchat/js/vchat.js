@@ -184,7 +184,7 @@ function start_vue() {
 					required: false,
 					admin: false
 				},
-				//VOREStation Add Start
+				/*VOREStation Add Start
 				{
 					matches: ".nif",
 					becomes: "vc_nif",
@@ -193,7 +193,7 @@ function start_vue() {
 					required: false,
 					admin: false
 				},
-				//VOREStation Add End
+				//VOREStation Add End */
 				{
 					matches: ".filter_pm, .pm",
 					becomes: "vc_adminpm",

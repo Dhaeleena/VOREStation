@@ -175,7 +175,7 @@
 			H.nif.notify("High intensity light detected, and blocked!",TRUE)
 	*///VOREStation Add End
 
-	if(iscarbon(M) && !flashfail) //VOREStation Add - NIF
+	if(iscarbon(M) && !flashfail)
 		var/mob/living/carbon/C = M
 		if(C.stat != DEAD)
 			var/safety = C.eyecheck()
