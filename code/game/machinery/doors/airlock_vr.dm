@@ -21,14 +21,41 @@
 	normalspeed = FALSE // So it closes faster and hopefully keeps the warm air inside.
 	hackProof = TRUE //VOREStation Edit - No borgos
 
-/obj/machinery/door/airlock/glass_security/polarized
+/obj/machinery/door/airlock/proc/toggle()
+	if(glass)
+		glass = 0
+		if(!operating && density)
+			animate(src, src.window_color=GLASS_COLOR_TINTED, time=5)
+			set_opacity(1)
+	else
+		glass = 1
+		if(!operating)
+			animate(src, src.window_color=src.window_material.icon_colour, time=5)
+			set_opacity(0)
+
+/obj/machinery/button/windowtint/doortint
+	name = "door tint control"
+	desc = "A remote control switch for polarized glass doors."
+
+/obj/machinery/button/windowtint/doortint/toggle_tint()
+	use_power(5)
+	active = !active
+	update_icon()
+
+	for(var/obj/machinery/door/airlock/D in range(src,range))
+		if(D.polarized && (D.id == src.id || !D.id))
+			spawn(0)
+				D.toggle()
+				return
+
+/obj/machinery/door/airlock/glass/security/polarized
 	name = "Electrochromic Security Airlock"
-	icon_tinted = 'icons/obj/doors/Doorsectinted_vr.dmi'
+	polarized = 1
 
-/obj/machinery/door/airlock/glass_medical/polarized
+/obj/machinery/door/airlock/glass/medical/polarized
 	name = "Electrochromic Medical Airlock"
-	icon_tinted = 'icons/obj/doors/doormedtinted_vr.dmi'
+	polarized = 1
 
-/obj/machinery/door/airlock/glass_command/polarized
+/obj/machinery/door/airlock/glass/command/polarized
 	name = "Electrochormic Command Airlock"
-	icon_tinted = 'icons/obj/doors/Doorcomtinted_vr.dmi'
+	polarized = 1

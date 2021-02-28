@@ -10,7 +10,7 @@
 	opacity = 1
 	density = 1
 	can_atmos_pass = ATMOS_PASS_PROC
-	layer = DOOR_OPEN_LAYER
+	layer = DOOR_CLOSED_LAYER
 	var/open_layer = DOOR_OPEN_LAYER
 	var/closed_layer = DOOR_CLOSED_LAYER
 
@@ -30,6 +30,9 @@
 	var/repairing = 0
 	var/block_air_zones = 1 //If set, air zones cannot merge across the door even when it is opened.
 	var/close_door_at = 0 //When to automatically close the door, if possible
+
+	var/list/connections = list("0", "0", "0", "0")
+	var/list/blend_objects = list(/obj/structure/wall_frame, /obj/structure/window, /obj/structure/grille) // Objects which to blend with
 
 	//Multi-tile doors
 	dir = EAST
@@ -69,6 +72,7 @@
 			bound_height = width * world.icon_size
 
 	health = maxhealth
+	update_connections(1)
 	update_icon()
 
 	update_nearby_tiles(need_rebuild=1)
@@ -388,6 +392,7 @@
 			take_damage(100)
 
 /obj/machinery/door/update_icon()
+	update_dir()
 	if(density)
 		icon_state = "door1"
 	else
@@ -395,6 +400,14 @@
 	SSradiation.resistance_cache.Remove(get_turf(src))
 	return
 
+/obj/machinery/door/proc/update_dir()
+	if(connections in list(NORTH, SOUTH, NORTH|SOUTH))
+		if(connections in list(WEST, EAST, EAST|WEST))
+			set_dir(SOUTH)
+		else
+			set_dir(EAST)
+	else
+		set_dir(SOUTH)
 
 /obj/machinery/door/proc/do_animate(animation)
 	switch(animation)
@@ -508,3 +521,34 @@
 
 /obj/machinery/door/morgue
 	icon = 'icons/obj/doors/doormorgue.dmi'
+
+/obj/machinery/door/proc/update_connections(var/propagate = 0)
+	var/dirs = 0
+
+	for(var/direction in GLOB.cardinal)
+		var/turf/T = get_step(src, direction)
+		var/success = 0
+
+		if( istype(T, /turf/simulated/wall))
+			success = 1
+			if(propagate)
+				var/turf/simulated/wall/W = T
+				W.update_connections(1)
+				W.update_icon()
+
+		else if( istype(T, /turf/simulated/shuttle/wall) ||	istype(T, /turf/unsimulated/wall))
+			success = 1
+		else
+			for(var/obj/O in T)
+				for(var/b_type in blend_objects)
+					if( istype(O, b_type))
+						success = 1
+
+					if(success)
+						break
+				if(success)
+					break
+
+		if(success)
+			dirs |= direction
+	connections = dirs

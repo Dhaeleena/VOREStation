@@ -1,8 +1,8 @@
 obj/structure/firedoor_assembly
 	name = "\improper emergency shutter assembly"
 	desc = "It can save lives."
-	icon = 'icons/obj/doors/DoorHazard.dmi'
-	icon_state = "door_construction"
+	icon = 'icons/obj/doors/hazard/door.dmi'
+	icon_state = "construction"
 	anchored = 0
 	opacity = 0
 	density = 1
@@ -13,11 +13,7 @@ obj/structure/firedoor_assembly/update_icon()
 	if(glass)
 		icon = 'icons/obj/doors/DoorHazardGlass.dmi'
 	else
-		icon = 'icons/obj/doors/DoorHazard.dmi'
-	if(anchored)
-		icon_state = "door_anchored"
-	else
-		icon_state = "door_construction"
+		icon = 'icons/obj/doors/hazard/door.dmi'
 
 obj/structure/firedoor_assembly/attackby(obj/item/C, mob/user as mob)
 	if(istype(C, /obj/item/stack/cable_coil) && !wired && anchored)

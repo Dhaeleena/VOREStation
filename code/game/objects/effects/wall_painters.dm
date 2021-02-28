@@ -23,11 +23,23 @@
 /obj/effect/paint/command //Command Blue
 	color = COLOR_COMMAND_BLUE
 
+/obj/effect/paint/command_accent //Command Gold accents
+	color = COLOR_GOLD
+
 /obj/effect/paint/security //Security Red, woo!
 	color = COLOR_NT_RED
 
+/obj/effect/paint/security_accent //Security Orange accents
+	color = COLOR_DARK_ORANGE
+
 /obj/effect/paint/engineering //Engineering Yellow!
 	color = COLOR_AMBER
+
+/obj/effect/paint/engineering_accent //Engineering Red Accents
+	color = COLOR_FADED_MAROON
+
+/obj/effect/paint/atmos //Atmos Cyan!
+	color = COLOR_CYAN
 
 /obj/effect/paint/medical //Classic Medical Blue!
 	color = COLOR_DEEP_SKY_BLUE
@@ -35,17 +47,14 @@
 /obj/effect/paint/virology //Virology Green!
 	color = COLOR_GREEN
 
+/obj/effect/paint/research //Research's classic purple!
+	color = COLOR_PURPLE_GRAY
+
 /obj/effect/paint/cargo //Kinda the cargo tech jumpsuit color!
 	color = COLOR_PALE_ORANGE
 
 /obj/effect/paint/mining //Mining Brown color, also partially seen on regular cargo stuff too!
 	color = COLOR_BEASTY_BROWN
-
-/obj/effect/paint/atmos //Atmos Cyan!
-	color = COLOR_CYAN
-
-/obj/effect/paint/science //Science's classic purple!
-	color = COLOR_VIOLET
 
 /obj/effect/paint/civilian //Civilian Green color
 	color = COLOR_CIVIE_GREEN
@@ -75,11 +84,23 @@
 /obj/effect/paint_stripe/command //Command Blue
 	color = COLOR_COMMAND_BLUE
 
+/obj/effect/paint_stripe/command_accent //Command Gold accents
+	color = COLOR_GOLD
+
 /obj/effect/paint_stripe/security //Security Red, woo!
 	color = COLOR_NT_RED
 
+/obj/effect/paint_stripe/security_accent //Security Orange accents
+	color = COLOR_DARK_ORANGE
+
 /obj/effect/paint_stripe/engineering //Engineering Yellow!
 	color = COLOR_AMBER
+
+/obj/effect/paint_stripe/engineering_accent //Engineering Red Accents
+	color = COLOR_FADED_MAROON
+
+/obj/effect/paint_stripe/atmos //Atmos Cyan!
+	color = COLOR_CYAN
 
 /obj/effect/paint_stripe/medical //Classic Medical Blue!
 	color = COLOR_DEEP_SKY_BLUE
@@ -87,17 +108,14 @@
 /obj/effect/paint_stripe/virology //Virology Green!
 	color = COLOR_GREEN
 
+/obj/effect/paint_stripe/research //Research's classic purple!
+	color = COLOR_VIOLET
+
 /obj/effect/paint_stripe/cargo //Kinda the cargo tech jumpsuit color!
 	color = COLOR_PALE_ORANGE
 
 /obj/effect/paint_stripe/mining //Mining Brown color, also partially seen on regular cargo stuff too!
 	color = COLOR_BEASTY_BROWN
-
-/obj/effect/paint_stripe/atmos //Atmos Cyan!
-	color = COLOR_CYAN
-
-/obj/effect/paint_stripe/science //Science's classic purple!
-	color = COLOR_VIOLET
 
 /obj/effect/paint_stripe/civilian //Civilian Green color
 	color = COLOR_CIVIE_GREEN

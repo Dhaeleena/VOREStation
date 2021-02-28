@@ -1,7 +1,23 @@
 //Terribly sorry for the code doubling, but things go derpy otherwise.
 /obj/machinery/door/airlock/multi_tile
+	airlock_type = "double"
+	icon = 'icons/obj/doors/double/door.dmi'
+	fill_file = 'icons/obj/doors/double/fill_steel.dmi'
+	color_file = 'icons/obj/doors/double/color.dmi'
+	color_fill_file = 'icons/obj/doors/double/fill_color.dmi'
+	stripe_file = 'icons/obj/doors/double/stripe.dmi'
+	stripe_fill_file = 'icons/obj/doors/double/fill_stripe.dmi'
+	glass_file = 'icons/obj/doors/double/fill_glass.dmi'
+	bolts_file = 'icons/obj/doors/double/lights_bolts.dmi'
+	deny_file = 'icons/obj/doors/double/lights_deny.dmi'
+	lights_file = 'icons/obj/doors/double/lights_green.dmi'
+	panel_file = 'icons/obj/doors/double/panel.dmi'
+	welded_file = 'icons/obj/doors/double/welded.dmi'
+	emag_file = 'icons/obj/doors/double/emag.dmi'
 	width = 2
 	appearance_flags = 0
+	opacity = 1
+	assembly_type = /obj/structure/door_assembly/multi_tile
 	var/obj/machinery/filler_object/filler1
 	var/obj/machinery/filler_object/filler2
 	open_sound_powered = 'sound/machines/door/WideOpen.ogg'
@@ -43,7 +59,7 @@
 	return .
 
 /obj/machinery/door/airlock/multi_tile/proc/SetBounds()
-	if(dir in list(EAST, WEST))
+	if(dir in list(NORTH, SOUTH))
 		bound_width = width * world.icon_size
 		bound_height = world.icon_size
 	else
@@ -62,17 +78,59 @@
 	filler1.set_opacity(opacity)
 	filler2.set_opacity(opacity)
 
+/obj/machinery/door/airlock/multi_tile/update_icon(state=0, override=0)
+	..()
+	if(connections in list(NORTH, SOUTH, NORTH|SOUTH))
+		if(connections in list(WEST, EAST, EAST|WEST))
+			set_dir(SOUTH)
+		else
+			set_dir(WEST)
+	else
+		set_dir(SOUTH)
+
+/obj/machinery/door/airlock/multi_tile/update_connections(var/propagate = 0)
+	var/dirs = 0
+
+	for(var/direction in GLOB.cardinal)
+		var/turf/T = get_step(src, direction)
+		var/success = 0
+
+		if(direction in list(NORTH, EAST))
+			T = get_step(T, direction)
+
+		if( istype(T, /turf/simulated/wall))
+			success = 1
+			if(propagate)
+				var/turf/simulated/wall/W = T
+				W.update_connections()
+				W.update_icon()
+
+		else if( istype(T, /turf/simulated/shuttle/wall))
+			success = 1
+		else
+			for(var/obj/O in T)
+				for(var/b_type in blend_objects)
+					if( istype(O, b_type))
+						success = 1
+
+					if(success)
+						break
+				if(success)
+					break
+
+		if(success)
+			dirs |= direction
+	connections = dirs
+
 /obj/machinery/door/airlock/multi_tile/glass
 	name = "Glass Airlock"
-	icon = 'icons/obj/doors/Door2x1glass.dmi'
+	hitsound = 'sound/effects/Glasshit.ogg'
 	opacity = 0
 	glass = 1
-	assembly_type = /obj/structure/door_assembly/multi_tile
 
 /obj/machinery/door/airlock/multi_tile/metal
 	name = "Airlock"
 	icon = 'icons/obj/doors/Door2x1metal.dmi'
-	assembly_type = /obj/structure/door_assembly/multi_tile
 
 /obj/machinery/filler_object
 	name = ""
