@@ -598,7 +598,7 @@
 	icon_state = "window"
 	basestate = "window"
 	glasstype = /obj/item/stack/material/glass
-	base_color = "#ccddff"
+	base_color = GLASS_COLOR
 	maximal_heat = T0C + 100
 	damage_per_fire_tick = 2.0
 	maxhealth = 12.0
@@ -617,7 +617,7 @@
 	icon_state = "window"
 	shardtype = /obj/item/weapon/material/shard/phoron
 	glasstype = /obj/item/stack/material/glass/phoronglass
-	base_color = "#7c3a9a"
+	base_color = GLASS_COLOR_PHORON
 	maximal_heat = T0C + 2000
 	damage_per_fire_tick = 1.0
 	maxhealth = 40.0
@@ -636,7 +636,7 @@
 	icon_state = "rwindow"
 	shardtype = /obj/item/weapon/material/shard/phoron
 	glasstype = /obj/item/stack/material/glass/phoronrglass
-	base_color = "#7c3a9a"
+	base_color = GLASS_COLOR_PHORON
 	reinf = 1
 	maximal_heat = T0C + 4000
 	damage_per_fire_tick = 1.0 // This should last for 80 fire ticks if the window is not damaged at all. The idea is that borosilicate windows have something like ablative layer that protects them for a while.
@@ -659,7 +659,7 @@
 	maximal_heat = T0C + 750
 	damage_per_fire_tick = 2.0
 	glasstype = /obj/item/stack/material/glass/reinforced
-	base_color = "#ccddff"
+	base_color = GLASS_COLOR
 	force_threshold = 6
 
 /obj/structure/window/reinforced/full
@@ -671,13 +671,13 @@
 /obj/structure/window/reinforced/tinted
 	name = "tinted window"
 	desc = "It looks rather strong and opaque. Might take a few good hits to shatter it."
-	base_color = "#222222"
+	base_color = GLASS_COLOR_TINTED
 	opacity = 1
 
 /obj/structure/window/reinforced/tinted/frosted
 	name = "frosted window"
 	desc = "It looks rather strong and frosted over. Looks like it might take a few less hits then a normal reinforced window."
-	base_color = "#eeeeee"
+	base_color = GLASS_COLOR_FROSTED
 	maxhealth = 30
 	force_threshold = 5
 
@@ -729,7 +729,7 @@
 		animate(src, color=get_color(), time=5)
 		set_opacity(0)
 	else
-		animate(src, color="#222222", time=5)
+		animate(src, color=GLASS_COLOR_TINTED, time=5)
 		set_opacity(1)
 
 /obj/machinery/button/windowtint

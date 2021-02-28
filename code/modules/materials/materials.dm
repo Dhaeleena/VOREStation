@@ -504,7 +504,7 @@ var/list/name_to_material
 	name = "glass"
 	stack_type = /obj/item/stack/material/glass
 	flags = MATERIAL_BRITTLE
-	icon_colour = "#00E1FF"
+	icon_colour = GLASS_COLOR
 	opacity = 0.3
 	integrity = 100
 	shard_type = SHARD_SHARD

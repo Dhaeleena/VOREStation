@@ -91,6 +91,7 @@
 #define COLOR_DARK_TEAL        "#2db5b5"
 #define COLOR_LIGHT_VIOLET     "#e7bfff"
 #define COLOR_SAN_MARINO_BLUE  "#4b75ab"
+#define COLOR_FADED_MAROON     "#993030"
 
 #define	PIPE_COLOR_GREY        "#808080"
 #define	PIPE_COLOR_RED         "#ff0000"
@@ -131,8 +132,8 @@
 #define WOOD_COLOR_YELLOW      "#e3994e" //Yew Wood
 #define WOOD_COLOR_LIGHTBLUE   "#0099cc" //Sif Wood
 
-#define GLASS_COLOR            "#74c1ee"
-#define GLASS_COLOR_PHORON     "#7c3a9a"
+#define GLASS_COLOR            "#ccddff"
+#define GLASS_COLOR_PHORON     "#bb77cc"
 #define GLASS_COLOR_TINTED     "#222222"
 #define GLASS_COLOR_FROSTED    "#ffffff"
 

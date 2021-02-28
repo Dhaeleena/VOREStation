@@ -18,13 +18,17 @@
 	desc = "That looks like it doesn't open easily."
 	icon = 'icons/obj/doors/rapid_pdoor.dmi'
 	icon_state = null
+
 	min_force = 20 //minimum amount of force needed to damage the door with a melee weapon
 	var/datum/material/implicit_material
+
 	// Icon states for different shutter types. Simply change this instead of rewriting the update_icon proc.
 	var/icon_state_open = null
 	var/icon_state_opening = null
 	var/icon_state_closed = null
 	var/icon_state_closing = null
+	var/icon_state_open_broken = null
+	var/icon_state_closed_broken = null
 	var/open_sound = 'sound/machines/door/blastdooropen.ogg'
 	var/close_sound = 'sound/machines/door/blastdoorclose.ogg'
 	var/damage = BLAST_DOOR_CRUSH_DAMAGE
@@ -39,12 +43,26 @@
 	//turning this off prevents awkward zone geometry in places like medbay lobby, for example.
 	block_air_zones = 0
 
+	var/begins_closed = TRUE
+
 /obj/machinery/door/blast/Initialize()
 	. = ..()
+
+	if(!begins_closed)
+		icon_state = icon_state_open
+		density = 0
+		opacity = 0
+		layer = open_layer
+
 	implicit_material = get_material_by_name("plasteel")
 
 /obj/machinery/door/blast/get_material()
 	return implicit_material
+
+/obj/machinery/door/blast/examine(mob/user)
+	. = ..()
+	if((stat & BROKEN))
+		to_chat(user, "It's broken.")
 
 // Proc: Bumped()
 // Parameters: 1 (AM - Atom that tried to walk through this object)
@@ -60,9 +78,15 @@
 // Description: Updates icon of this object. Uses icon state variables.
 /obj/machinery/door/blast/update_icon()
 	if(density)
-		icon_state = icon_state_closed
+		if(stat & BROKEN)
+			icon_state = icon_state_closed_broken
+		else
+			icon_state = icon_state_closed
 	else
-		icon_state = icon_state_open
+		if(stat & BROKEN)
+			icon_state = icon_state_open_broken
+		else
+			icon_state = icon_state_open
 	SSradiation.resistance_cache.Remove(get_turf(src))
 	return
 
@@ -300,28 +324,43 @@
 
 // SUBTYPE: Regular
 // Your classical blast door, found almost everywhere.
-obj/machinery/door/blast/regular
+/obj/machinery/door/blast/regular
+	icon_state = "pdoor1"
 	icon_state_open = "pdoor0"
 	icon_state_opening = "pdoorc0"
 	icon_state_closed = "pdoor1"
 	icon_state_closing = "pdoorc1"
-	icon_state = "pdoor1"
-	maxhealth = 600
+	icon_state_open_broken = "blast_open_broken"
+	icon_state_closed_broken = "blast_closed_broken"
 
-obj/machinery/door/blast/regular/open
-	icon_state = "pdoor0"
-	density = 0
-	opacity = 0
+	min_force = 30
+	maxhealth = 1000
+	block_air_zones = 1
+
+/obj/machinery/door/blast/regular/open
+	begins_closed = FALSE
 
 // SUBTYPE: Shutters
 // Nicer looking, and also weaker, shutters. Found in kitchen and similar areas.
 /obj/machinery/door/blast/shutters
+	name = "shutters"
+	icon_state = "shutter1"
 	icon_state_open = "shutter0"
 	icon_state_opening = "shutterc0"
 	icon_state_closed = "shutter1"
 	icon_state_closing = "shutterc1"
-	icon_state = "shutter1"
+	icon_state_open_broken = "shutter_open_broken"
+	icon_state_closed_broken = "shutter_closed_broken"
+
+	open_sound = 'sound/machines/shutters_open.ogg'
+	close_sound = 'sound/machines/shutters_close.ogg'
+	min_force = 15
+	maxhealth = 500
+	explosion_resistance = 10
 	damage = SHUTTER_CRUSH_DAMAGE
+
+/obj/machinery/door/blast/shutters/open
+	begins_closed = FALSE
 
 #undef BLAST_DOOR_CRUSH_DAMAGE
 #undef SHUTTER_CRUSH_DAMAGE
