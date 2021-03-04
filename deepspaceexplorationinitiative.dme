@@ -192,6 +192,7 @@
 #include "code\ATMOSPHERICS\components\binary_devices\binary_atmos_base.dm"
 #include "code\ATMOSPHERICS\components\binary_devices\circulator.dm"
 #include "code\ATMOSPHERICS\components\binary_devices\dp_vent_pump.dm"
+#include "code\ATMOSPHERICS\components\binary_devices\highpower_pump.dm"
 #include "code\ATMOSPHERICS\components\binary_devices\passive_gate.dm"
 #include "code\ATMOSPHERICS\components\binary_devices\passive_gate_vr.dm"
 #include "code\ATMOSPHERICS\components\binary_devices\pipeturbine.dm"
@@ -3770,7 +3771,6 @@
 #include "maps\southern_cross\loadout\loadout_head.dm"
 #include "maps\southern_cross\loadout\loadout_suit.dm"
 #include "maps\southern_cross\loadout\loadout_uniform.dm"
-#include "maps\stargazer\stargazer.dm"
 #include "maps\submaps\_helpers.dm"
 #include "maps\submaps\_readme.dm"
 #include "maps\submaps\engine_submaps\engine.dm"
@@ -3785,5 +3785,6 @@
 #include "maps\submaps\surface_submaps\plains\plains_areas.dm"
 #include "maps\submaps\surface_submaps\wilderness\wilderness.dm"
 #include "maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
+#include "maps\virgo_minitest\virgo_minitest.dm"
 #include "maps\~map_system\maps.dm"
 // END_INCLUDE
