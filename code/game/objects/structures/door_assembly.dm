@@ -77,6 +77,14 @@
 	glass_type = /obj/machinery/door/airlock/external/glass
 	paintable = 0
 
+/obj/structure/door_assembly/door_assembly_mai
+	icon = 'icons/obj/doors/hatch/door.dmi'
+	panel_icon = 'icons/obj/doors/hatch/panel.dmi'
+	fill_icon = 'icons/obj/doors/hatch/fill_steel.dmi'
+	base_name = "Maintenance Hatch"
+	airlock_type = /obj/machinery/door/airlock/maintenance
+	glass = -1
+
 /obj/structure/door_assembly/door_assembly_hatch
 	icon = 'icons/obj/doors/hatch/door.dmi'
 	panel_icon = 'icons/obj/doors/hatch/panel.dmi'
