@@ -2659,7 +2659,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/glass_science{
+/obj/machinery/door/airlock/glass/research{
 	name = "General Gasworks"
 	},
 /obj/machinery/door/firedoor/glass,
@@ -3677,7 +3677,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/door/airlock/glass_science{
+/obj/machinery/door/airlock/glass/research{
 	name = "Toxins Mixing"
 	},
 /obj/machinery/door/firedoor/glass,
@@ -4232,7 +4232,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock/science{
+/obj/machinery/door/airlock/research{
 	name = "Research Outpost"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -4733,7 +4733,7 @@
 /turf/simulated/floor,
 /area/rnd/outpost/storage)
 "iT" = (
-/obj/machinery/door/airlock/science{
+/obj/machinery/door/airlock/research{
 	name = "Toxins Storage"
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -5484,7 +5484,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/door/airlock/science{
+/obj/machinery/door/airlock/research{
 	name = "Research Outpost"
 	},
 /turf/simulated/floor/tiled,
@@ -5679,7 +5679,7 @@
 /turf/simulated/floor,
 /area/rnd/outpost/anomaly_lab/storage)
 "kI" = (
-/obj/machinery/door/airlock/science{
+/obj/machinery/door/airlock/research{
 	name = "Anomalous Materials"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -6999,7 +6999,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/door/airlock/glass_science{
+/obj/machinery/door/airlock/glass/research{
 	name = "Anomaly Analysis Chamber";
 	req_access = list(65)
 	},
@@ -7552,7 +7552,7 @@
 "nP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/door/airlock/glass_science{
+/obj/machinery/door/airlock/glass/research{
 	name = "Anomaly Testing Airlock Access"
 	},
 /obj/structure/cable/green{
@@ -7680,7 +7680,7 @@
 /turf/simulated/floor/tiled,
 /area/rnd/outpost)
 "oe" = (
-/obj/machinery/door/airlock/glass_science{
+/obj/machinery/door/airlock/glass/research{
 	name = "Xenoarch Storage"
 	},
 /obj/machinery/door/firedoor/border_only,
